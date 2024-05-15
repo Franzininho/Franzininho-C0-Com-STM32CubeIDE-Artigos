@@ -1,0 +1,10 @@
+18:10:13 **** Incremental Build of configuration Debug for project BancadaEmbarcados ****
+make -j4 all 
+arm-none-eabi-size  BancadaEmbarcados.elf 
+   text	   data	    bss	    dec	    hex	filename
+   4552	     12	   1572	   6136	   17f8	BancadaEmbarcados.elf
+Finished building: default.size.stdout
+ 
+
+18:10:14 Build Finished. 0 errors, 0 warnings. (took 1s.386ms)
+

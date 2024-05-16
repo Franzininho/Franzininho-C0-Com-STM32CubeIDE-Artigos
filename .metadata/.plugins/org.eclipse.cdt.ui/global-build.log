@@ -704,3 +704,176 @@ Finished building: default.size.stdout
  
 Finished building: MedindoEventos.list
  
+12:14:19 **** Incremental Build of configuration Debug for project MedindoEventos ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Falling_Callback':
+../Core/Src/main.c:156:25: error: 'start_time' undeclared (first use in this function)
+  156 |                         start_time = HAL_GetTick(); // Inicia a contagem de tempo
+      |                         ^~~~~~~~~~
+../Core/Src/main.c:156:25: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/main.c:160:25: error: 'end_time' undeclared (first use in this function)
+  160 |                         end_time = HAL_GetTick(); // Finaliza a contagem de tempo
+      |                         ^~~~~~~~
+../Core/Src/main.c:213:13: error: invalid storage class for function 'MX_TIM3_Init'
+  213 | static void MX_TIM3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:258:13: error: invalid storage class for function 'MX_USART1_UART_Init'
+  258 | static void MX_USART1_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:306:13: error: invalid storage class for function 'MX_GPIO_Init'
+  306 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:346:1: error: expected declaration or statement at end of input
+  346 | }
+      | ^
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:61:13: warning: 'MX_GPIO_Init' used but never defined
+   61 | static void MX_GPIO_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:62:13: warning: 'MX_USART1_UART_Init' used but never defined
+   62 | static void MX_USART1_UART_Init(void);
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:63:13: warning: 'MX_TIM3_Init' used but never defined
+   63 | static void MX_TIM3_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:337:6: warning: 'Error_Handler' defined but not used [-Wunused-function]
+  337 | void Error_Handler(void)
+      |      ^~~~~~~~~~~~~
+../Core/Src/main.c:306:13: warning: 'MX_GPIO_Init' defined but not used [-Wunused-function]
+  306 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:258:13: warning: 'MX_USART1_UART_Init' defined but not used [-Wunused-function]
+  258 | static void MX_USART1_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:213:13: warning: 'MX_TIM3_Init' defined but not used [-Wunused-function]
+  213 | static void MX_TIM3_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:176:6: warning: 'SystemClock_Config' defined but not used [-Wunused-function]
+  176 | void SystemClock_Config(void)
+      |      ^~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+12:16:09 **** Incremental Build of configuration Debug for project MedindoEventos ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "MedindoEventos.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\MedindoEventos\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MedindoEventos.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MedindoEventos.elf
+ 
+arm-none-eabi-size  MedindoEventos.elf 
+arm-none-eabi-objdump -h -S MedindoEventos.elf  > "MedindoEventos.list"
+   text	   data	    bss	    dec	    hex	filename
+  13412	    124	   2188	  15724	   3d6c	MedindoEventos.elf
+Finished building: default.size.stdout
+ 
+Finished building: MedindoEventos.list
+ 
+12:22:54 **** Incremental Build of configuration Debug for project MedindoEventos ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "MedindoEventos.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\MedindoEventos\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MedindoEventos.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MedindoEventos.elf
+ 
+arm-none-eabi-size  MedindoEventos.elf 
+arm-none-eabi-objdump -h -S MedindoEventos.elf  > "MedindoEventos.list"
+   text	   data	    bss	    dec	    hex	filename
+  13428	    124	   2188	  15740	   3d7c	MedindoEventos.elf
+Finished building: default.size.stdout
+ 
+Finished building: MedindoEventos.list
+ 
+12:26:42 **** Incremental Build of configuration Debug for project MedindoEventos ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "MedindoEventos.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\MedindoEventos\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MedindoEventos.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MedindoEventos.elf
+ 
+arm-none-eabi-size  MedindoEventos.elf 
+arm-none-eabi-objdump -h -S MedindoEventos.elf  > "MedindoEventos.list"
+   text	   data	    bss	    dec	    hex	filename
+  13428	    124	   2188	  15740	   3d7c	MedindoEventos.elf
+Finished building: default.size.stdout
+ 
+Finished building: MedindoEventos.list
+ 
+12:32:10 **** Incremental Build of configuration Debug for project MedindoEventos ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'debounce_button':
+../Core/Src/main.c:128:17: warning: implicit declaration of function 'sprintf' [-Wimplicit-function-declaration]
+  128 |                 sprintf(uart_tx_buffer, "Tempo decorrido: %lu ms\r\n", time); // Formata mensagem
+      |                 ^~~~~~~
+../Core/Src/main.c:21:1: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+   20 | #include "main.h"
+  +++ |+#include <stdio.h>
+   21 | 
+../Core/Src/main.c:128:17: warning: incompatible implicit declaration of built-in function 'sprintf' [-Wbuiltin-declaration-mismatch]
+  128 |                 sprintf(uart_tx_buffer, "Tempo decorrido: %lu ms\r\n", time); // Formata mensagem
+      |                 ^~~~~~~
+../Core/Src/main.c:128:17: note: include '<stdio.h>' or provide a declaration of 'sprintf'
+../Core/Src/main.c:129:71: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  129 |                 HAL_UART_Transmit(&huart1, (uint8_t *)uart_tx_buffer, strlen(uart_tx_buffer), 1000); // Transmite mensagem serial pela UART
+      |                                                                       ^~~~~~
+../Core/Src/main.c:21:1: note: include '<string.h>' or provide a declaration of 'strlen'
+   20 | #include "main.h"
+  +++ |+#include <string.h>
+   21 | 
+../Core/Src/main.c:129:71: warning: incompatible implicit declaration of built-in function 'strlen' [-Wbuiltin-declaration-mismatch]
+  129 |                 HAL_UART_Transmit(&huart1, (uint8_t *)uart_tx_buffer, strlen(uart_tx_buffer), 1000); // Transmite mensagem serial pela UART
+      |                                                                       ^~~~~~
+../Core/Src/main.c:129:71: note: include '<string.h>' or provide a declaration of 'strlen'
+arm-none-eabi-gcc -o "MedindoEventos.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\MedindoEventos\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MedindoEventos.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MedindoEventos.elf
+ 
+arm-none-eabi-size  MedindoEventos.elf 
+arm-none-eabi-objdump -h -S MedindoEventos.elf  > "MedindoEventos.list"
+   text	   data	    bss	    dec	    hex	filename
+  13412	    124	   2188	  15724	   3d6c	MedindoEventos.elf
+Finished building: default.size.stdout
+ 
+Finished building: MedindoEventos.list
+ 
+12:32:37 **** Incremental Build of configuration Debug for project MedindoEventos ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "MedindoEventos.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\MedindoEventos\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MedindoEventos.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MedindoEventos.elf
+ 
+arm-none-eabi-size  MedindoEventos.elf 
+arm-none-eabi-objdump -h -S MedindoEventos.elf  > "MedindoEventos.list"
+   text	   data	    bss	    dec	    hex	filename
+  13412	    124	   2188	  15724	   3d6c	MedindoEventos.elf
+Finished building: default.size.stdout
+ 
+Finished building: MedindoEventos.list
+ 
+12:38:06 **** Incremental Build of configuration Debug for project MedindoEventos ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32c0xx_hal_msp.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32c0xx_hal_msp.d" -MT"Core/Src/stm32c0xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32c0xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32c0xx_it.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32c0xx_it.d" -MT"Core/Src/stm32c0xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32c0xx_it.o"
+arm-none-eabi-gcc -o "MedindoEventos.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\MedindoEventos\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MedindoEventos.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MedindoEventos.elf
+ 
+arm-none-eabi-size  MedindoEventos.elf 
+arm-none-eabi-objdump -h -S MedindoEventos.elf  > "MedindoEventos.list"
+   text	   data	    bss	    dec	    hex	filename
+  14152	    124	   2188	  16464	   4050	MedindoEventos.elf
+Finished building: default.size.stdout
+ 
+Finished building: MedindoEventos.list
+ 
+12:45:06 **** Incremental Build of configuration Debug for project MedindoEventos ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "MedindoEventos.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\MedindoEventos\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MedindoEventos.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MedindoEventos.elf
+ 
+arm-none-eabi-size  MedindoEventos.elf 
+arm-none-eabi-objdump -h -S MedindoEventos.elf  > "MedindoEventos.list"
+   text	   data	    bss	    dec	    hex	filename
+  14024	    124	   2188	  16336	   3fd0	MedindoEventos.elf
+Finished building: default.size.stdout
+ 
+Finished building: MedindoEventos.list
+ 

@@ -18,8 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "stdio.h"
-#include "string.h"
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -50,6 +49,7 @@ UART_HandleTypeDef huart1;
 /* Variáveis globais */
 volatile  uint32_t time = 0;
 volatile  uint8_t button_state = 0;
+volatile  uint32_t debounce_time = 0;
 char uart_tx_buffer[50];
 uint8_t msg_start[] = "Contagem de tempo iniciada!\r\n";
 /* USER CODE END PV */
@@ -114,6 +114,27 @@ int main(void)
   /* USER CODE END 3 */
 }
 
+/* Função lidar com debouce botao */
+void debounce_button(void) {
+    uint32_t current_time = HAL_GetTick();
+    if (current_time - debounce_time >= 50) { // Tempo de debounce
+        if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_8) == GPIO_PIN_RESET) {
+            if (!button_state) { // Primeiro pressionamento
+                HAL_TIM_Base_Start(&htim3); // Inicia temporizador
+        		HAL_UART_Transmit(&huart1, msg_start, (sizeof(msg_start)-1), 1000);	// Transmite mensagem serial pela UART
+                button_state = 1;
+            } else { // Segundo pressionamento
+                HAL_TIM_Base_Stop(&htim3); // Para temporizador
+                sprintf(uart_tx_buffer, "Tempo decorrido: %lu ms\r\n", time); // Formata mensagem
+                HAL_UART_Transmit(&huart1, (uint8_t *)uart_tx_buffer, strlen(uart_tx_buffer), 1000); // Transmite mensagem serial pela UART
+                //zera variaveis de controle
+                time = 0;
+                button_state = 0;
+            }
+        }
+        debounce_time = current_time;
+    }
+}
 
 /* Função de callback de interrupção do temporizador */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
@@ -125,18 +146,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 /* Função de configuração da interrupção externa */
 void HAL_GPIO_EXTI_Falling_Callback(uint16_t GPIO_Pin) {
     if (GPIO_Pin == GPIO_PIN_8) { // Botão pressionado
-    	if (!button_state) { // Primeiro pressionamento
-    		HAL_TIM_Base_Start_IT(&htim3);     // Inicia temporizador
-    	    HAL_UART_Transmit(&huart1, msg_start, (sizeof(msg_start)-1), 1000);	// Transmite mensagem serial pela UART
-    	    button_state = 1;
-    	} else { // Segundo pressionamento
-    		HAL_TIM_Base_Stop_IT(&htim3); // Para temporizador
-    	    sprintf(uart_tx_buffer, "Tempo decorrido: %lu ms\r\n", time); // Formata mensagem
-    	    HAL_UART_Transmit(&huart1, (uint8_t *)uart_tx_buffer, strlen(uart_tx_buffer), 1000); // Transmite mensagem serial pela UART
-    	    //zera variaveis de controle
-    	    time = 0;
-    	    button_state = 0;
-       }
+    	debounce_button();
     }
 }
 
@@ -197,7 +207,7 @@ static void MX_TIM3_Init(void)
   htim3.Instance = TIM3;
   htim3.Init.Prescaler = 4800-1;
   htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim3.Init.Period = 10-1;
+  htim3.Init.Period = 1000-1;
   htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim3.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_ENABLE;
   if (HAL_TIM_Base_Init(&htim3) != HAL_OK)

@@ -461,3 +461,246 @@ Finished building: default.size.stdout
  
 Finished building: InterrupcaoExterna.list
  
+10:09:56 **** Build of configuration Debug for project MedindoEventos ****
+make -j4 all 
+arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_cortex.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_cortex.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_cortex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma_ex.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma_ex.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_exti.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_exti.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_exti.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash_ex.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash_ex.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_gpio.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_gpio.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_gpio.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr_ex.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr_ex.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc_ex.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc_ex.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim.o"
+arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim_ex.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim_ex.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_uart.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_uart.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_uart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_uart.o"
+arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_uart_ex.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_uart_ex.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_uart_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_uart_ex.o"
+arm-none-eabi-gcc -mcpu=cortex-m0plus -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Startup/startup_stm32c011f6px.d" -MT"Core/Startup/startup_stm32c011f6px.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Startup/startup_stm32c011f6px.o" "../Core/Startup/startup_stm32c011f6px.s"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32c0xx_hal_msp.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32c0xx_hal_msp.d" -MT"Core/Src/stm32c0xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32c0xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32c0xx_it.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32c0xx_it.d" -MT"Core/Src/stm32c0xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32c0xx_it.o"
+arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/syscalls.o"
+arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/sysmem.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32c0xx.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32c0xx.d" -MT"Core/Src/system_stm32c0xx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/system_stm32c0xx.o"
+arm-none-eabi-gcc -o "MedindoEventos.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\MedindoEventos\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MedindoEventos.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MedindoEventos.elf
+ 
+arm-none-eabi-size  MedindoEventos.elf 
+arm-none-eabi-objdump -h -S MedindoEventos.elf  > "MedindoEventos.list"
+   text	   data	    bss	    dec	    hex	filename
+   9856	     12	   1796	  11664	   2d90	MedindoEventos.elf
+Finished building: default.size.stdout
+ 
+Finished building: MedindoEventos.list
+ 
+10:10:36 **** Incremental Build of configuration Debug for project MedindoEventos ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:103:23: error: 'htim2' undeclared (first use in this function); did you mean 'htim3'?
+  103 |   HAL_TIM_Base_Start(&htim2);
+      |                       ^~~~~
+      |                       htim3
+../Core/Src/main.c:103:23: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+10:10:59 **** Incremental Build of configuration Debug for project MedindoEventos ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "MedindoEventos.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\MedindoEventos\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MedindoEventos.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MedindoEventos.elf
+ 
+arm-none-eabi-size  MedindoEventos.elf 
+arm-none-eabi-objdump -h -S MedindoEventos.elf  > "MedindoEventos.list"
+   text	   data	    bss	    dec	    hex	filename
+  10008	     12	   1796	  11816	   2e28	MedindoEventos.elf
+Finished building: default.size.stdout
+ 
+Finished building: MedindoEventos.list
+ 
+10:15:29 **** Incremental Build of configuration Debug for project MedindoEventos ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Callback':
+../Core/Src/main.c:125:40: error: 'msg_descida' undeclared (first use in this function)
+  125 |             HAL_UART_Transmit(&huart1, msg_descida, (sizeof(msg_descida)-1), 1000);     // Transmite mensagem serial pela UART
+      |                                        ^~~~~~~~~~~
+../Core/Src/main.c:125:40: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+10:15:46 **** Incremental Build of configuration Debug for project MedindoEventos ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "MedindoEventos.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\MedindoEventos\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MedindoEventos.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MedindoEventos.elf
+ 
+arm-none-eabi-size  MedindoEventos.elf 
+arm-none-eabi-objdump -h -S MedindoEventos.elf  > "MedindoEventos.list"
+   text	   data	    bss	    dec	    hex	filename
+  10008	     12	   1796	  11816	   2e28	MedindoEventos.elf
+Finished building: default.size.stdout
+ 
+Finished building: MedindoEventos.list
+ 
+10:17:00 **** Incremental Build of configuration Debug for project MedindoEventos ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "MedindoEventos.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\MedindoEventos\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MedindoEventos.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MedindoEventos.elf
+ 
+arm-none-eabi-size  MedindoEventos.elf 
+arm-none-eabi-objdump -h -S MedindoEventos.elf  > "MedindoEventos.list"
+   text	   data	    bss	    dec	    hex	filename
+  10008	     12	   1796	  11816	   2e28	MedindoEventos.elf
+Finished building: default.size.stdout
+ 
+Finished building: MedindoEventos.list
+ 
+10:17:56 **** Incremental Build of configuration Debug for project MedindoEventos ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "MedindoEventos.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\MedindoEventos\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MedindoEventos.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MedindoEventos.elf
+ 
+arm-none-eabi-size  MedindoEventos.elf 
+arm-none-eabi-objdump -h -S MedindoEventos.elf  > "MedindoEventos.list"
+   text	   data	    bss	    dec	    hex	filename
+  10008	     12	   1796	  11816	   2e28	MedindoEventos.elf
+Finished building: default.size.stdout
+ 
+Finished building: MedindoEventos.list
+ 
+10:20:05 **** Incremental Build of configuration Debug for project MedindoEventos ****
+make -j4 all 
+arm-none-eabi-size  MedindoEventos.elf 
+   text	   data	    bss	    dec	    hex	filename
+  10008	     12	   1796	  11816	   2e28	MedindoEventos.elf
+Finished building: default.size.stdout
+ 
+10:20:49 **** Incremental Build of configuration Debug for project MedindoEventos ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "MedindoEventos.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\MedindoEventos\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MedindoEventos.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MedindoEventos.elf
+ 
+arm-none-eabi-size  MedindoEventos.elf 
+arm-none-eabi-objdump -h -S MedindoEventos.elf  > "MedindoEventos.list"
+   text	   data	    bss	    dec	    hex	filename
+  10008	     12	   1796	  11816	   2e28	MedindoEventos.elf
+Finished building: default.size.stdout
+ 
+Finished building: MedindoEventos.list
+ 
+10:27:38 **** Incremental Build of configuration Debug for project MedindoEventos ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32c0xx_it.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32c0xx_it.d" -MT"Core/Src/stm32c0xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32c0xx_it.o"
+arm-none-eabi-gcc -o "MedindoEventos.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\MedindoEventos\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MedindoEventos.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MedindoEventos.elf
+ 
+arm-none-eabi-size  MedindoEventos.elf 
+arm-none-eabi-objdump -h -S MedindoEventos.elf  > "MedindoEventos.list"
+   text	   data	    bss	    dec	    hex	filename
+  10100	     12	   1796	  11908	   2e84	MedindoEventos.elf
+Finished building: default.size.stdout
+ 
+Finished building: MedindoEventos.list
+ 
+10:28:37 **** Incremental Build of configuration Debug for project MedindoEventos ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "MedindoEventos.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\MedindoEventos\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MedindoEventos.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MedindoEventos.elf
+ 
+arm-none-eabi-size  MedindoEventos.elf 
+arm-none-eabi-objdump -h -S MedindoEventos.elf  > "MedindoEventos.list"
+   text	   data	    bss	    dec	    hex	filename
+  10100	     12	   1796	  11908	   2e84	MedindoEventos.elf
+Finished building: default.size.stdout
+ 
+Finished building: MedindoEventos.list
+ 
+10:28:52 **** Incremental Build of configuration Debug for project MedindoEventos ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "MedindoEventos.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\MedindoEventos\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MedindoEventos.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MedindoEventos.elf
+ 
+arm-none-eabi-size  MedindoEventos.elf 
+arm-none-eabi-objdump -h -S MedindoEventos.elf  > "MedindoEventos.list"
+   text	   data	    bss	    dec	    hex	filename
+  10100	     12	   1796	  11908	   2e84	MedindoEventos.elf
+Finished building: default.size.stdout
+ 
+Finished building: MedindoEventos.list
+ 
+10:29:52 **** Incremental Build of configuration Debug for project MedindoEventos ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "MedindoEventos.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\MedindoEventos\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MedindoEventos.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MedindoEventos.elf
+ 
+arm-none-eabi-size  MedindoEventos.elf 
+arm-none-eabi-objdump -h -S MedindoEventos.elf  > "MedindoEventos.list"
+   text	   data	    bss	    dec	    hex	filename
+  10100	     12	   1796	  11908	   2e84	MedindoEventos.elf
+Finished building: default.size.stdout
+ 
+Finished building: MedindoEventos.list
+ 
+10:31:04 **** Incremental Build of configuration Debug for project MedindoEventos ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "MedindoEventos.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\MedindoEventos\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MedindoEventos.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MedindoEventos.elf
+ 
+arm-none-eabi-size  MedindoEventos.elf 
+arm-none-eabi-objdump -h -S MedindoEventos.elf  > "MedindoEventos.list"
+   text	   data	    bss	    dec	    hex	filename
+  13096	    124	   2196	  15416	   3c38	MedindoEventos.elf
+Finished building: default.size.stdout
+ 
+Finished building: MedindoEventos.list
+ 
+10:32:01 **** Incremental Build of configuration Debug for project MedindoEventos ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "MedindoEventos.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\MedindoEventos\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MedindoEventos.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MedindoEventos.elf
+ 
+arm-none-eabi-size  MedindoEventos.elf 
+arm-none-eabi-objdump -h -S MedindoEventos.elf  > "MedindoEventos.list"
+   text	   data	    bss	    dec	    hex	filename
+  13084	    124	   2196	  15404	   3c2c	MedindoEventos.elf
+Finished building: default.size.stdout
+ 
+Finished building: MedindoEventos.list
+ 
+10:44:26 **** Incremental Build of configuration Debug for project MedindoEventos ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'debounce_button':
+../Core/Src/main.c:133:17: error: 'time_difference' undeclared (first use in this function)
+  133 |                 time_difference = end_time - start_time; // Calcula a diferença de tempo
+      |                 ^~~~~~~~~~~~~~~
+../Core/Src/main.c:133:17: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+10:44:38 **** Incremental Build of configuration Debug for project MedindoEventos ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "MedindoEventos.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\MedindoEventos\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MedindoEventos.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MedindoEventos.elf
+ 
+arm-none-eabi-size  MedindoEventos.elf 
+arm-none-eabi-objdump -h -S MedindoEventos.elf  > "MedindoEventos.list"
+   text	   data	    bss	    dec	    hex	filename
+  13364	    124	   2196	  15684	   3d44	MedindoEventos.elf
+Finished building: default.size.stdout
+ 
+Finished building: MedindoEventos.list
+ 

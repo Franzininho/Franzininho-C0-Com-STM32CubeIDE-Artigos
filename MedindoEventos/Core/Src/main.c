@@ -22,6 +22,7 @@
 #include "string.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -46,14 +47,22 @@ TIM_HandleTypeDef htim3;
 UART_HandleTypeDef huart1;
 
 /* USER CODE BEGIN PV */
+/* Variáveis globais */
+volatile uint32_t start_time = 0;
+volatile uint32_t end_time = 0;
+volatile uint32_t time = 0;
+volatile uint8_t button_state = 0;
+char uart_tx_buffer[50];
+volatile uint32_t debounce_time = 0;
+uint8_t msg_start[] = "Contagem de tempo iniciada!\r\n";
 
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
-static void MX_TIM3_Init(void);
 static void MX_USART1_UART_Init(void);
+static void MX_TIM3_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -71,12 +80,7 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
-  char uart_tx_buffer[50];
-  uint8_t button_state = 1; // 1 para botão não pressionado, 0 para botão pressionado
-  uint8_t flag = 0; // 1 para botão não pressionado, 0 para botão pressionado
-  uint32_t start_time = 0;
-  uint32_t end_time = 0;
-  uint32_t time_difference = 0;
+
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -97,10 +101,10 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_TIM3_Init();
   MX_USART1_UART_Init();
+  MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
-  HAL_TIM_Base_Start(&htim3);
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -110,29 +114,40 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	button_state = HAL_GPIO_ReadPin(BOTAO_GPIO_Port, BOTAO_Pin);
-	if(button_state==0 && flag==0){
-		flag=1;
-		while(button_state==0){
-			start_time = HAL_GetTick();
-			button_state = HAL_GPIO_ReadPin(BOTAO_GPIO_Port, BOTAO_Pin);
-			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_SET); //liga
-		}
-	}
-	if(button_state==0 && flag==1){
-		flag=0;
-		while(button_state==0){
-		end_time = HAL_GetTick();
-		button_state = HAL_GPIO_ReadPin(BOTAO_GPIO_Port, BOTAO_Pin);
-		HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_RESET); //desliga
-		}
-		time_difference = end_time - start_time;
-		sprintf(uart_tx_buffer, "Tempo decorrido: %lu ms\r\n", time_difference);
-		HAL_UART_Transmit(&huart1, (uint8_t *)uart_tx_buffer, strlen(uart_tx_buffer), 1000);
-	}
   }
   /* USER CODE END 3 */
 }
+
+/* Função lidar com debouce botao */
+void debounce_button(void) {
+    HAL_TIM_Base_Start(&htim3);
+    uint32_t current_time = HAL_GetTick();
+    if (current_time - debounce_time >= 50) { // Tempo de debounce
+        if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_8) == GPIO_PIN_RESET) {
+            if (!button_state) { // Primeiro pressionamento
+                start_time = HAL_GetTick(); // Inicia a contagem de tempo
+        		HAL_UART_Transmit(&huart1, msg_start, (sizeof(msg_start)-1), 1000);	// Transmite mensagem serial pela UART
+                button_state = 1;
+            } else { // Segundo pressionamento
+                end_time = HAL_GetTick(); // Finaliza a contagem de tempo
+                time = end_time - start_time; // Calcula a diferença de tempo
+                sprintf(uart_tx_buffer, "Tempo decorrido: %lu ms\r\n", time); // Formata mensagem
+                HAL_UART_Transmit(&huart1, (uint8_t *)uart_tx_buffer, strlen(uart_tx_buffer), 1000); // Transmite mensagem serial pela UART
+                button_state = 0;
+            }
+        }
+        debounce_time = current_time;
+    }
+}
+
+/* Funções de configuração da interrupção externa */
+
+void HAL_GPIO_EXTI_Falling_Callback(uint16_t GPIO_Pin) {
+    if (GPIO_Pin == GPIO_PIN_8) { // Botão pressionado
+        debounce_button();
+    }
+}
+
 
 /**
   * @brief System Clock Configuration
@@ -276,23 +291,16 @@ static void MX_GPIO_Init(void)
 
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOA_CLK_ENABLE();
-  __HAL_RCC_GPIOB_CLK_ENABLE();
 
-  /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, GPIO_PIN_RESET);
-
-  /*Configure GPIO pin : BOTAO_Pin */
-  GPIO_InitStruct.Pin = BOTAO_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  /*Configure GPIO pin : PA8 */
+  GPIO_InitStruct.Pin = GPIO_PIN_8;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_FALLING;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
-  HAL_GPIO_Init(BOTAO_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : PB6 */
-  GPIO_InitStruct.Pin = GPIO_PIN_6;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
+  /* EXTI interrupt init*/
+  HAL_NVIC_SetPriority(EXTI4_15_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI4_15_IRQn);
 
 /* USER CODE BEGIN MX_GPIO_Init_2 */
 /* USER CODE END MX_GPIO_Init_2 */

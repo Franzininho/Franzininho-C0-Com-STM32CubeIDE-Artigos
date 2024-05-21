@@ -136,7 +136,7 @@ void HAL_GPIO_EXTI_Falling_Callback(uint16_t GPIO_Pin) {
     	    //zera variaveis de controle
     	    time = 0;
     	    button_state = 0;
-       }
+    	 }
     }
 }
 

@@ -3114,12 +3114,12 @@ LOAD C:/ST/STM32CubeIDE_1.15.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  *(.text*)
  .text.main     0x08000418       0x1c ./Core/Src/main.o
                 0x08000418                main
- .text.HAL_TIM_PeriodElapsedCallback
-                0x08000434       0x2c ./Core/Src/main.o
-                0x08000434                HAL_TIM_PeriodElapsedCallback
  .text.HAL_GPIO_EXTI_Falling_Callback
-                0x08000460       0xa0 ./Core/Src/main.o
-                0x08000460                HAL_GPIO_EXTI_Falling_Callback
+                0x08000434       0xa0 ./Core/Src/main.o
+                0x08000434                HAL_GPIO_EXTI_Falling_Callback
+ .text.HAL_TIM_PeriodElapsedCallback
+                0x080004d4       0x2c ./Core/Src/main.o
+                0x080004d4                HAL_TIM_PeriodElapsedCallback
  .text.SystemClock_Config
                 0x08000500       0x86 ./Core/Src/main.o
                 0x08000500                SystemClock_Config

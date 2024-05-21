@@ -531,126 +531,126 @@ int main(void)
  8000430:	46c0      	nop			@ (mov r8, r8)
  8000432:	e7fd      	b.n	8000430 <main+0x18>
 
-08000434 <HAL_TIM_PeriodElapsedCallback>:
+08000434 <HAL_GPIO_EXTI_Falling_Callback>:
   /* USER CODE END 3 */
 }
 
 
-/* Função de callback de interrupção do temporizador */
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
+/* Função de configuração da interrupção externa */
+void HAL_GPIO_EXTI_Falling_Callback(uint16_t GPIO_Pin) {
  8000434:	b580      	push	{r7, lr}
  8000436:	b082      	sub	sp, #8
  8000438:	af00      	add	r7, sp, #0
- 800043a:	6078      	str	r0, [r7, #4]
-    if (htim == &htim3) {
- 800043c:	687a      	ldr	r2, [r7, #4]
- 800043e:	4b06      	ldr	r3, [pc, #24]	@ (8000458 <HAL_TIM_PeriodElapsedCallback+0x24>)
- 8000440:	429a      	cmp	r2, r3
- 8000442:	d104      	bne.n	800044e <HAL_TIM_PeriodElapsedCallback+0x1a>
-        time++;
- 8000444:	4b05      	ldr	r3, [pc, #20]	@ (800045c <HAL_TIM_PeriodElapsedCallback+0x28>)
- 8000446:	681b      	ldr	r3, [r3, #0]
- 8000448:	1c5a      	adds	r2, r3, #1
- 800044a:	4b04      	ldr	r3, [pc, #16]	@ (800045c <HAL_TIM_PeriodElapsedCallback+0x28>)
- 800044c:	601a      	str	r2, [r3, #0]
-    }
-}
- 800044e:	46c0      	nop			@ (mov r8, r8)
- 8000450:	46bd      	mov	sp, r7
- 8000452:	b002      	add	sp, #8
- 8000454:	bd80      	pop	{r7, pc}
- 8000456:	46c0      	nop			@ (mov r8, r8)
- 8000458:	20000098 	.word	0x20000098
- 800045c:	20000178 	.word	0x20000178
-
-08000460 <HAL_GPIO_EXTI_Falling_Callback>:
-
-/* Função de configuração da interrupção externa */
-void HAL_GPIO_EXTI_Falling_Callback(uint16_t GPIO_Pin) {
- 8000460:	b580      	push	{r7, lr}
- 8000462:	b082      	sub	sp, #8
- 8000464:	af00      	add	r7, sp, #0
- 8000466:	0002      	movs	r2, r0
- 8000468:	1dbb      	adds	r3, r7, #6
- 800046a:	801a      	strh	r2, [r3, #0]
+ 800043a:	0002      	movs	r2, r0
+ 800043c:	1dbb      	adds	r3, r7, #6
+ 800043e:	801a      	strh	r2, [r3, #0]
     if (GPIO_Pin == GPIO_PIN_8) { // Botão pressionado
- 800046c:	1dbb      	adds	r3, r7, #6
- 800046e:	881a      	ldrh	r2, [r3, #0]
- 8000470:	2380      	movs	r3, #128	@ 0x80
- 8000472:	005b      	lsls	r3, r3, #1
- 8000474:	429a      	cmp	r2, r3
- 8000476:	d130      	bne.n	80004da <HAL_GPIO_EXTI_Falling_Callback+0x7a>
+ 8000440:	1dbb      	adds	r3, r7, #6
+ 8000442:	881a      	ldrh	r2, [r3, #0]
+ 8000444:	2380      	movs	r3, #128	@ 0x80
+ 8000446:	005b      	lsls	r3, r3, #1
+ 8000448:	429a      	cmp	r2, r3
+ 800044a:	d130      	bne.n	80004ae <HAL_GPIO_EXTI_Falling_Callback+0x7a>
     	if (!button_state) { // Primeiro pressionamento
- 8000478:	4b1a      	ldr	r3, [pc, #104]	@ (80004e4 <HAL_GPIO_EXTI_Falling_Callback+0x84>)
- 800047a:	781b      	ldrb	r3, [r3, #0]
- 800047c:	b2db      	uxtb	r3, r3
- 800047e:	2b00      	cmp	r3, #0
- 8000480:	d10e      	bne.n	80004a0 <HAL_GPIO_EXTI_Falling_Callback+0x40>
+ 800044c:	4b1a      	ldr	r3, [pc, #104]	@ (80004b8 <HAL_GPIO_EXTI_Falling_Callback+0x84>)
+ 800044e:	781b      	ldrb	r3, [r3, #0]
+ 8000450:	b2db      	uxtb	r3, r3
+ 8000452:	2b00      	cmp	r3, #0
+ 8000454:	d10e      	bne.n	8000474 <HAL_GPIO_EXTI_Falling_Callback+0x40>
     		HAL_TIM_Base_Start_IT(&htim3);     // Inicia temporizador
- 8000482:	4b19      	ldr	r3, [pc, #100]	@ (80004e8 <HAL_GPIO_EXTI_Falling_Callback+0x88>)
- 8000484:	0018      	movs	r0, r3
- 8000486:	f001 fa4f 	bl	8001928 <HAL_TIM_Base_Start_IT>
+ 8000456:	4b19      	ldr	r3, [pc, #100]	@ (80004bc <HAL_GPIO_EXTI_Falling_Callback+0x88>)
+ 8000458:	0018      	movs	r0, r3
+ 800045a:	f001 fa65 	bl	8001928 <HAL_TIM_Base_Start_IT>
     	    HAL_UART_Transmit(&huart1, msg_start, (sizeof(msg_start)-1), 1000);	// Transmite mensagem serial pela UART
- 800048a:	23fa      	movs	r3, #250	@ 0xfa
- 800048c:	009b      	lsls	r3, r3, #2
- 800048e:	4917      	ldr	r1, [pc, #92]	@ (80004ec <HAL_GPIO_EXTI_Falling_Callback+0x8c>)
- 8000490:	4817      	ldr	r0, [pc, #92]	@ (80004f0 <HAL_GPIO_EXTI_Falling_Callback+0x90>)
- 8000492:	221d      	movs	r2, #29
- 8000494:	f001 fe94 	bl	80021c0 <HAL_UART_Transmit>
+ 800045e:	23fa      	movs	r3, #250	@ 0xfa
+ 8000460:	009b      	lsls	r3, r3, #2
+ 8000462:	4917      	ldr	r1, [pc, #92]	@ (80004c0 <HAL_GPIO_EXTI_Falling_Callback+0x8c>)
+ 8000464:	4817      	ldr	r0, [pc, #92]	@ (80004c4 <HAL_GPIO_EXTI_Falling_Callback+0x90>)
+ 8000466:	221d      	movs	r2, #29
+ 8000468:	f001 feaa 	bl	80021c0 <HAL_UART_Transmit>
     	    button_state = 1;
- 8000498:	4b12      	ldr	r3, [pc, #72]	@ (80004e4 <HAL_GPIO_EXTI_Falling_Callback+0x84>)
- 800049a:	2201      	movs	r2, #1
- 800049c:	701a      	strb	r2, [r3, #0]
+ 800046c:	4b12      	ldr	r3, [pc, #72]	@ (80004b8 <HAL_GPIO_EXTI_Falling_Callback+0x84>)
+ 800046e:	2201      	movs	r2, #1
+ 8000470:	701a      	strb	r2, [r3, #0]
     	    //zera variaveis de controle
     	    time = 0;
     	    button_state = 0;
        }
     }
 }
- 800049e:	e01c      	b.n	80004da <HAL_GPIO_EXTI_Falling_Callback+0x7a>
+ 8000472:	e01c      	b.n	80004ae <HAL_GPIO_EXTI_Falling_Callback+0x7a>
     		HAL_TIM_Base_Stop_IT(&htim3); // Para temporizador
- 80004a0:	4b11      	ldr	r3, [pc, #68]	@ (80004e8 <HAL_GPIO_EXTI_Falling_Callback+0x88>)
- 80004a2:	0018      	movs	r0, r3
- 80004a4:	f001 fa8e 	bl	80019c4 <HAL_TIM_Base_Stop_IT>
+ 8000474:	4b11      	ldr	r3, [pc, #68]	@ (80004bc <HAL_GPIO_EXTI_Falling_Callback+0x88>)
+ 8000476:	0018      	movs	r0, r3
+ 8000478:	f001 faa4 	bl	80019c4 <HAL_TIM_Base_Stop_IT>
     	    sprintf(uart_tx_buffer, "Tempo decorrido: %lu ms\r\n", time); // Formata mensagem
- 80004a8:	4b12      	ldr	r3, [pc, #72]	@ (80004f4 <HAL_GPIO_EXTI_Falling_Callback+0x94>)
- 80004aa:	681a      	ldr	r2, [r3, #0]
- 80004ac:	4912      	ldr	r1, [pc, #72]	@ (80004f8 <HAL_GPIO_EXTI_Falling_Callback+0x98>)
- 80004ae:	4b13      	ldr	r3, [pc, #76]	@ (80004fc <HAL_GPIO_EXTI_Falling_Callback+0x9c>)
- 80004b0:	0018      	movs	r0, r3
- 80004b2:	f002 fbef 	bl	8002c94 <siprintf>
+ 800047c:	4b12      	ldr	r3, [pc, #72]	@ (80004c8 <HAL_GPIO_EXTI_Falling_Callback+0x94>)
+ 800047e:	681a      	ldr	r2, [r3, #0]
+ 8000480:	4912      	ldr	r1, [pc, #72]	@ (80004cc <HAL_GPIO_EXTI_Falling_Callback+0x98>)
+ 8000482:	4b13      	ldr	r3, [pc, #76]	@ (80004d0 <HAL_GPIO_EXTI_Falling_Callback+0x9c>)
+ 8000484:	0018      	movs	r0, r3
+ 8000486:	f002 fc05 	bl	8002c94 <siprintf>
     	    HAL_UART_Transmit(&huart1, (uint8_t *)uart_tx_buffer, strlen(uart_tx_buffer), 1000); // Transmite mensagem serial pela UART
- 80004b6:	4b11      	ldr	r3, [pc, #68]	@ (80004fc <HAL_GPIO_EXTI_Falling_Callback+0x9c>)
- 80004b8:	0018      	movs	r0, r3
- 80004ba:	f7ff fe25 	bl	8000108 <strlen>
- 80004be:	0003      	movs	r3, r0
- 80004c0:	b29a      	uxth	r2, r3
- 80004c2:	23fa      	movs	r3, #250	@ 0xfa
- 80004c4:	009b      	lsls	r3, r3, #2
- 80004c6:	490d      	ldr	r1, [pc, #52]	@ (80004fc <HAL_GPIO_EXTI_Falling_Callback+0x9c>)
- 80004c8:	4809      	ldr	r0, [pc, #36]	@ (80004f0 <HAL_GPIO_EXTI_Falling_Callback+0x90>)
- 80004ca:	f001 fe79 	bl	80021c0 <HAL_UART_Transmit>
+ 800048a:	4b11      	ldr	r3, [pc, #68]	@ (80004d0 <HAL_GPIO_EXTI_Falling_Callback+0x9c>)
+ 800048c:	0018      	movs	r0, r3
+ 800048e:	f7ff fe3b 	bl	8000108 <strlen>
+ 8000492:	0003      	movs	r3, r0
+ 8000494:	b29a      	uxth	r2, r3
+ 8000496:	23fa      	movs	r3, #250	@ 0xfa
+ 8000498:	009b      	lsls	r3, r3, #2
+ 800049a:	490d      	ldr	r1, [pc, #52]	@ (80004d0 <HAL_GPIO_EXTI_Falling_Callback+0x9c>)
+ 800049c:	4809      	ldr	r0, [pc, #36]	@ (80004c4 <HAL_GPIO_EXTI_Falling_Callback+0x90>)
+ 800049e:	f001 fe8f 	bl	80021c0 <HAL_UART_Transmit>
     	    time = 0;
- 80004ce:	4b09      	ldr	r3, [pc, #36]	@ (80004f4 <HAL_GPIO_EXTI_Falling_Callback+0x94>)
- 80004d0:	2200      	movs	r2, #0
- 80004d2:	601a      	str	r2, [r3, #0]
+ 80004a2:	4b09      	ldr	r3, [pc, #36]	@ (80004c8 <HAL_GPIO_EXTI_Falling_Callback+0x94>)
+ 80004a4:	2200      	movs	r2, #0
+ 80004a6:	601a      	str	r2, [r3, #0]
     	    button_state = 0;
- 80004d4:	4b03      	ldr	r3, [pc, #12]	@ (80004e4 <HAL_GPIO_EXTI_Falling_Callback+0x84>)
- 80004d6:	2200      	movs	r2, #0
- 80004d8:	701a      	strb	r2, [r3, #0]
+ 80004a8:	4b03      	ldr	r3, [pc, #12]	@ (80004b8 <HAL_GPIO_EXTI_Falling_Callback+0x84>)
+ 80004aa:	2200      	movs	r2, #0
+ 80004ac:	701a      	strb	r2, [r3, #0]
 }
- 80004da:	46c0      	nop			@ (mov r8, r8)
- 80004dc:	46bd      	mov	sp, r7
- 80004de:	b002      	add	sp, #8
- 80004e0:	bd80      	pop	{r7, pc}
- 80004e2:	46c0      	nop			@ (mov r8, r8)
- 80004e4:	2000017c 	.word	0x2000017c
- 80004e8:	20000098 	.word	0x20000098
- 80004ec:	20000000 	.word	0x20000000
- 80004f0:	200000e4 	.word	0x200000e4
- 80004f4:	20000178 	.word	0x20000178
- 80004f8:	080035e8 	.word	0x080035e8
- 80004fc:	20000180 	.word	0x20000180
+ 80004ae:	46c0      	nop			@ (mov r8, r8)
+ 80004b0:	46bd      	mov	sp, r7
+ 80004b2:	b002      	add	sp, #8
+ 80004b4:	bd80      	pop	{r7, pc}
+ 80004b6:	46c0      	nop			@ (mov r8, r8)
+ 80004b8:	2000017c 	.word	0x2000017c
+ 80004bc:	20000098 	.word	0x20000098
+ 80004c0:	20000000 	.word	0x20000000
+ 80004c4:	200000e4 	.word	0x200000e4
+ 80004c8:	20000178 	.word	0x20000178
+ 80004cc:	080035e8 	.word	0x080035e8
+ 80004d0:	20000180 	.word	0x20000180
+
+080004d4 <HAL_TIM_PeriodElapsedCallback>:
+
+/* Função de callback de interrupção do temporizador */
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
+ 80004d4:	b580      	push	{r7, lr}
+ 80004d6:	b082      	sub	sp, #8
+ 80004d8:	af00      	add	r7, sp, #0
+ 80004da:	6078      	str	r0, [r7, #4]
+    if (htim == &htim3) {
+ 80004dc:	687a      	ldr	r2, [r7, #4]
+ 80004de:	4b06      	ldr	r3, [pc, #24]	@ (80004f8 <HAL_TIM_PeriodElapsedCallback+0x24>)
+ 80004e0:	429a      	cmp	r2, r3
+ 80004e2:	d104      	bne.n	80004ee <HAL_TIM_PeriodElapsedCallback+0x1a>
+        time++;
+ 80004e4:	4b05      	ldr	r3, [pc, #20]	@ (80004fc <HAL_TIM_PeriodElapsedCallback+0x28>)
+ 80004e6:	681b      	ldr	r3, [r3, #0]
+ 80004e8:	1c5a      	adds	r2, r3, #1
+ 80004ea:	4b04      	ldr	r3, [pc, #16]	@ (80004fc <HAL_TIM_PeriodElapsedCallback+0x28>)
+ 80004ec:	601a      	str	r2, [r3, #0]
+    }
+}
+ 80004ee:	46c0      	nop			@ (mov r8, r8)
+ 80004f0:	46bd      	mov	sp, r7
+ 80004f2:	b002      	add	sp, #8
+ 80004f4:	bd80      	pop	{r7, pc}
+ 80004f6:	46c0      	nop			@ (mov r8, r8)
+ 80004f8:	20000098 	.word	0x20000098
+ 80004fc:	20000178 	.word	0x20000178
 
 08000500 <SystemClock_Config>:
 /**
@@ -2775,7 +2775,7 @@ void HAL_GPIO_EXTI_IRQHandler(uint16_t GPIO_Pin)
  8000fce:	1dbb      	adds	r3, r7, #6
  8000fd0:	881b      	ldrh	r3, [r3, #0]
  8000fd2:	0018      	movs	r0, r3
- 8000fd4:	f7ff fa44 	bl	8000460 <HAL_GPIO_EXTI_Falling_Callback>
+ 8000fd4:	f7ff fa2e 	bl	8000434 <HAL_GPIO_EXTI_Falling_Callback>
   }
 }
  8000fd8:	46c0      	nop			@ (mov r8, r8)
@@ -5055,7 +5055,7 @@ void HAL_TIM_IRQHandler(TIM_HandleTypeDef *htim)
       HAL_TIM_PeriodElapsedCallback(htim);
  8001b86:	687b      	ldr	r3, [r7, #4]
  8001b88:	0018      	movs	r0, r3
- 8001b8a:	f7fe fc53 	bl	8000434 <HAL_TIM_PeriodElapsedCallback>
+ 8001b8a:	f7fe fca3 	bl	80004d4 <HAL_TIM_PeriodElapsedCallback>
 #endif /* USE_HAL_TIM_REGISTER_CALLBACKS */
     }
   }

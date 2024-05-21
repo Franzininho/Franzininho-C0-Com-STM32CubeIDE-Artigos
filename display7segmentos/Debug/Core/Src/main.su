@@ -1,0 +1,7 @@
+../Core/Src/main.c:67:5:main	16	static
+../Core/Src/main.c:116:6:numero	24	static
+../Core/Src/main.c:126:6:atualizaDisplay	32	static
+../Core/Src/main.c:144:5:debounceBotao	24	static
+../Core/Src/main.c:164:6:SystemClock_Config	64	static
+../Core/Src/main.c:201:13:MX_GPIO_Init	48	static
+../Core/Src/main.c:242:6:Error_Handler	8	static,ignoring_inline_asm

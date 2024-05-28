@@ -18,6 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "stdio.h"
@@ -42,7 +43,9 @@
 /* Private variables ---------------------------------------------------------*/
 ADC_HandleTypeDef hadc1;
 DMA_HandleTypeDef hdma_adc1;
+
 TIM_HandleTypeDef htim3;
+
 UART_HandleTypeDef huart1;
 
 /* USER CODE BEGIN PV */
@@ -63,14 +66,13 @@ static void MX_TIM3_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 // funcao dma
-
 uint16_t adc_data[1];
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc) {
 	HAL_ADC_Stop_DMA(&hadc1);
     if (hadc->Instance == ADC1) { // Verifica se o callback é do ADC1
         char msg[50];
         // Formata a mensagem com os valores lidos do ADC
-        sprintf(msg, "Leitura Potenciometro: %u\r\n", adc_data[0]);
+        sprintf(msg, "Leitura Potenciometro com DMA: %u\r\n", adc_data[0]);
         // Envia a mensagem pela UART
         HAL_UART_Transmit(&huart1, (uint8_t *)msg, strlen(msg), 1000);
     }
@@ -79,9 +81,8 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc) {
 // funcao de interrupcao
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc) {
    uint32_t leituraPotenciometro = HAL_ADC_GetValue(&hadc1);
-   HAL_ADC_Stop_IT (&hadc1);
    char msg[50];
-   sprintf(msg, "Leitura Potenciometro: %lu\r\n", leituraPotenciometro); // Formata mensagem
+   sprintf(msg, "Leitura Potenciometro com Interrupcao: %lu\r\n", leituraPotenciometro); // Formata mensagem
    HAL_UART_Transmit(&huart1, (uint8_t *)msg, strlen(msg), 1000); // Imprime Serial
 }
 
@@ -122,6 +123,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start(&htim3); // Inicia contagem
   HAL_ADCEx_Calibration_Start(&hadc1); // Rotina de calibração do ADC
+  HAL_ADC_Start_IT(&hadc1);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -131,25 +133,20 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+   HAL_ADC_Start_DMA(&hadc1, (uint32_t *)adc_data, 1);
    if(__HAL_TIM_GET_FLAG(&htim3, TIM_FLAG_UPDATE)){
 	   __HAL_TIM_CLEAR_FLAG(&htim3, TIM_FLAG_UPDATE);
-	   HAL_ADC_Start_DMA(&hadc1, (uint32_t *)adc_data, 2);
-	   HAL_ADC_Start_IT(&hadc1);
+	   // ADC Polling
+	   HAL_ADC_Start (&hadc1);   // inicia leitura ADC
+	   HAL_ADC_PollForConversion (&hadc1, 1000); //aguarda conversao seja concluida
+	   uint32_t leituraPotenciometro = HAL_ADC_GetValue (&hadc1); //  ler valor analogico
+	   HAL_ADC_Stop(&hadc1);
+	   char msg[50];
+	   sprintf(msg, "Leitura Potenciometro: %lu\r\n", leituraPotenciometro); // Formata mensagem
+	   HAL_UART_Transmit(&huart1, (uint8_t *)msg, strlen(msg), 1000); // Imprime Serial
+
 	}
 
-   // ADC
-   HAL_ADC_Start (&hadc1);   // inicia leitura ADC
-   HAL_ADC_PollForConversion (&hadc1, 1000); //aguarda conversao seja concluida
-   uint32_t leituraPotenciometro = HAL_ADC_GetValue (&hadc1); //  ler valor analogico
-   HAL_ADC_Stop(&hadc1);
-
-   	// UART
-   char msg[50];
-   sprintf(msg, "Leitura Potenciometro: %lu\r\n", leituraPotenciometro); // Formata mensagem
-   HAL_UART_Transmit(&huart1, (uint8_t *)msg, strlen(msg), 1000); // Imprime Serial
-
-    // delay 2 segundo
-   	HAL_Delay(2000);
   }
   /* USER CODE END 3 */
 }

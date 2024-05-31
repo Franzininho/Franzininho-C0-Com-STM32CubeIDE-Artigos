@@ -65,6 +65,7 @@ static void MX_TIM3_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
 // funcao dma
 uint16_t adc_data[1];
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc) {
@@ -77,14 +78,14 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc) {
         HAL_UART_Transmit(&huart1, (uint8_t *)msg, strlen(msg), 1000);
     }
 }
-
+/*
 // funcao de interrupcao
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc) {
    uint32_t leituraPotenciometro = HAL_ADC_GetValue(&hadc1);
    char msg[50];
    sprintf(msg, "Leitura Potenciometro com Interrupcao: %lu\r\n", leituraPotenciometro); // Formata mensagem
    HAL_UART_Transmit(&huart1, (uint8_t *)msg, strlen(msg), 1000); // Imprime Serial
-}
+}*/
 
 /* USER CODE END 0 */
 
@@ -123,7 +124,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start(&htim3); // Inicia contagem
   HAL_ADCEx_Calibration_Start(&hadc1); // Rotina de calibração do ADC
-  HAL_ADC_Start_IT(&hadc1);
+  //HAL_ADC_Start_IT(&hadc1);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -134,6 +135,8 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
    HAL_ADC_Start_DMA(&hadc1, (uint32_t *)adc_data, 1);
+
+	/*
    if(__HAL_TIM_GET_FLAG(&htim3, TIM_FLAG_UPDATE)){
 	   __HAL_TIM_CLEAR_FLAG(&htim3, TIM_FLAG_UPDATE);
 	   // ADC Polling
@@ -144,8 +147,7 @@ int main(void)
 	   char msg[50];
 	   sprintf(msg, "Leitura Potenciometro: %lu\r\n", leituraPotenciometro); // Formata mensagem
 	   HAL_UART_Transmit(&huart1, (uint8_t *)msg, strlen(msg), 1000); // Imprime Serial
-
-	}
+	}*/
 
   }
   /* USER CODE END 3 */

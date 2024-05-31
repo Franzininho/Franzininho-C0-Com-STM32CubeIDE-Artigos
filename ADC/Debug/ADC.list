@@ -491,8 +491,8 @@ Disassembly of section .text:
 08000418 <HAL_ADC_ConvCpltCallback>:
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-// funcao dma
 
+// funcao dma
 uint16_t adc_data[1];
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc) {
  8000418:	b590      	push	{r4, r7, lr}

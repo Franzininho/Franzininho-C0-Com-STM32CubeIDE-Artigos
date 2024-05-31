@@ -1,0 +1,17 @@
+11:27:31 **** Incremental Build of configuration Debug for project pwm ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\pwm\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: pwm.elf
+ 
+arm-none-eabi-size  pwm.elf 
+arm-none-eabi-objdump -h -S pwm.elf  > "pwm.list"
+   text	   data	    bss	    dec	    hex	filename
+   9280	     12	   1644	  10936	   2ab8	pwm.elf
+Finished building: default.size.stdout
+ 
+Finished building: pwm.list
+ 
+
+11:27:33 Build Finished. 0 errors, 0 warnings. (took 2s.526ms)
+

@@ -1,325 +1,234 @@
-10:57:15 **** Clean-only build of configuration Debug for project ADC ****
-make -j4 clean 
-rm -rf ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal.cyclo ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal.d ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal.o ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal.su ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc.cyclo ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc.d ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc.o ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc.su ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.cyclo ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.d ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.o ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.su ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_cortex.cyclo ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_cortex.d ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_cortex.o ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_cortex.su ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma.cyclo ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma.d ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma.o ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma.su ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma_ex.cyclo ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma_ex.d ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma_ex.o ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma_ex.su ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_exti.cyclo ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_exti.d ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_exti.o ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_exti.su ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.cyclo ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.d ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.o ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.su ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash_ex.cyclo ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash_ex.d ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash_ex.o ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash_ex.su ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_gpio.cyclo ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_gpio.d ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_gpio.o ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_gpio.su ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr.cyclo ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr.d ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr.o ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr.su ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr_ex.cyclo ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr_ex.d ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr_ex.o ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr_ex.su ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc.cyclo ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc.d ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc.o ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc.su ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc_ex.cyclo ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc_ex.d ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc_ex.o ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc_ex.su ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim.cyclo ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim.d ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim.o ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim.su ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim_ex.cyclo ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim_ex.d ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim_ex.o ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim_ex.su ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_uart.cyclo ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_uart.d ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_uart.o ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_uart.su ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_uart_ex.cyclo ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_uart_ex.d ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_uart_ex.o ./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_uart_ex.su
-rm -rf ./Core/Startup/startup_stm32c011f6px.d ./Core/Startup/startup_stm32c011f6px.o
-rm -rf ./Core/Src/main.cyclo ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/main.su ./Core/Src/stm32c0xx_hal_msp.cyclo ./Core/Src/stm32c0xx_hal_msp.d ./Core/Src/stm32c0xx_hal_msp.o ./Core/Src/stm32c0xx_hal_msp.su ./Core/Src/stm32c0xx_it.cyclo ./Core/Src/stm32c0xx_it.d ./Core/Src/stm32c0xx_it.o ./Core/Src/stm32c0xx_it.su ./Core/Src/syscalls.cyclo ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/syscalls.su ./Core/Src/sysmem.cyclo ./Core/Src/sysmem.d ./Core/Src/sysmem.o ./Core/Src/sysmem.su ./Core/Src/system_stm32c0xx.cyclo ./Core/Src/system_stm32c0xx.d ./Core/Src/system_stm32c0xx.o ./Core/Src/system_stm32c0xx.su
-rm -rf ADC.elf ADC.list ADC.map default.size.stdout
- 
-10:57:50 **** Build of configuration Debug for project ADC ****
+09:28:33 **** Incremental Build of configuration Debug for project gps_test ****
 make -j4 all 
-arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal.o"
-arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc.o"
-arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.o"
-arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_cortex.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_cortex.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_cortex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_cortex.o"
-arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma.o"
-arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma_ex.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma_ex.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma_ex.o"
-arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_exti.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_exti.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_exti.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_exti.o"
-arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.o"
-arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash_ex.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash_ex.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash_ex.o"
-arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_gpio.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_gpio.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_gpio.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_gpio.o"
-arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr.o"
-arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr_ex.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr_ex.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr_ex.o"
-arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc.o"
-arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc_ex.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc_ex.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc_ex.o"
-arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim.o"
-arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim_ex.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim_ex.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim_ex.o"
-arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_uart.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_uart.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_uart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_uart.o"
-arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_uart_ex.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_uart_ex.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_uart_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_uart_ex.o"
-arm-none-eabi-gcc -mcpu=cortex-m0plus -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Startup/startup_stm32c011f6px.d" -MT"Core/Startup/startup_stm32c011f6px.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Startup/startup_stm32c011f6px.o" "../Core/Startup/startup_stm32c011f6px.s"
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc "../Core/Src/stm32c0xx_hal_msp.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32c0xx_hal_msp.d" -MT"Core/Src/stm32c0xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32c0xx_hal_msp.o"
-arm-none-eabi-gcc "../Core/Src/stm32c0xx_it.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32c0xx_it.d" -MT"Core/Src/stm32c0xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32c0xx_it.o"
-arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/syscalls.o"
-../Core/Src/main.c:90:1: warning: "/*" within comment [-Wcomment]
-   90 | /* USER CODE END 0 */
-      |  
-arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/sysmem.o"
-arm-none-eabi-gcc "../Core/Src/system_stm32c0xx.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32c0xx.d" -MT"Core/Src/system_stm32c0xx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/system_stm32c0xx.o"
-arm-none-eabi-gcc -o "ADC.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\ADC\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADC.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: ADC.elf
+../Core/Src/main.c: In function 'analisarGPGGA':
+../Core/Src/main.c:87:42: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
+   87 |                 dados->latitudeInteira = atoi(token) / 100;
+      |                                          ^~~~
+arm-none-eabi-gcc -o "gps_test.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\gps_test\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="gps_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: gps_test.elf
  
-arm-none-eabi-size  ADC.elf 
-arm-none-eabi-objdump -h -S ADC.elf  > "ADC.list"
+arm-none-eabi-size  gps_test.elf 
+arm-none-eabi-objdump -h -S gps_test.elf  > "gps_test.list"
    text	   data	    bss	    dec	    hex	filename
-  19036	     92	   2324	  21452	   53cc	ADC.elf
+  21412	    104	   2720	  24236	   5eac	gps_test.elf
 Finished building: default.size.stdout
  
-Finished building: ADC.list
+Finished building: gps_test.list
  
-10:58:57 **** Incremental Build of configuration Debug for project ADC ****
+09:30:18 **** Incremental Build of configuration Debug for project gps_test ****
 make -j4 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c:87:2: warning: "/*" within comment [-Wcomment]
-   87 | }/*
-      |   
-../Core/Src/main.c:89:1: warning: "/*" within comment [-Wcomment]
-   89 | /* USER CODE END 0 */
-      |  
-arm-none-eabi-gcc -o "ADC.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\ADC\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADC.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: ADC.elf
+../Core/Src/main.c: In function 'analisarGPGGA':
+../Core/Src/main.c:87:42: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
+   87 |                 dados->latitudeInteira = atoi(token) / 100;
+      |                                          ^~~~
+arm-none-eabi-gcc -o "gps_test.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\gps_test\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="gps_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: gps_test.elf
  
-arm-none-eabi-size  ADC.elf 
-arm-none-eabi-objdump -h -S ADC.elf  > "ADC.list"
+arm-none-eabi-size  gps_test.elf 
+arm-none-eabi-objdump -h -S gps_test.elf  > "gps_test.list"
    text	   data	    bss	    dec	    hex	filename
-  19788	     92	   2324	  22204	   56bc	ADC.elf
+  21412	    104	   2720	  24236	   5eac	gps_test.elf
 Finished building: default.size.stdout
  
-Finished building: ADC.list
+Finished building: gps_test.list
  
-11:00:08 **** Incremental Build of configuration Debug for project ADC ****
+09:32:12 **** Incremental Build of configuration Debug for project gps_test ****
 make -j4 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "ADC.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\ADC\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADC.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: ADC.elf
+../Core/Src/main.c: In function 'analisarGPGGA':
+../Core/Src/main.c:87:42: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
+   87 |                 dados->latitudeInteira = atoi(token) / 100;
+      |                                          ^~~~
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:128:78: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+  128 |                 HAL_UART_Transmit(&huart1, (uint8_t *)bufferRecepcao, strlen(bufferRecepcao), 1000);
+      |                                                                              ^~~~~~~~~~~~~~
+      |                                                                              |
+      |                                                                              uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:24:
+C:\ST\STM32CubeIDE_1.15.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.100.202403111256\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/string.h:41:18: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   41 | size_t   strlen (const char *);
+      |                  ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "gps_test.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\gps_test\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="gps_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: gps_test.elf
  
-arm-none-eabi-size  ADC.elf 
-arm-none-eabi-objdump -h -S ADC.elf  > "ADC.list"
+arm-none-eabi-size  gps_test.elf 
+arm-none-eabi-objdump -h -S gps_test.elf  > "gps_test.list"
    text	   data	    bss	    dec	    hex	filename
-  20372	     92	   2324	  22788	   5904	ADC.elf
+  14676	     12	   2124	  16812	   41ac	gps_test.elf
 Finished building: default.size.stdout
  
-Finished building: ADC.list
+Finished building: gps_test.list
  
-11:02:43 **** Incremental Build of configuration Debug for project ADC ****
+09:52:17 **** Incremental Build of configuration Debug for project gps_test ****
 make -j4 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "ADC.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\ADC\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADC.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: ADC.elf
+../Core/Src/main.c: In function 'analisarGPGGA':
+../Core/Src/main.c:87:42: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
+   87 |                 dados->latitudeInteira = atoi(token) / 100;
+      |                                          ^~~~
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:128:44: warning: too many arguments for format [-Wformat-extra-args]
+  128 |                 sprintf(bufferTransmissao, "\r\n", bufferRecepcao);
+      |                                            ^~~~~~
+arm-none-eabi-gcc -o "gps_test.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\gps_test\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="gps_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: gps_test.elf
  
-arm-none-eabi-size  ADC.elf 
-arm-none-eabi-objdump -h -S ADC.elf  > "ADC.list"
+arm-none-eabi-size  gps_test.elf 
+arm-none-eabi-objdump -h -S gps_test.elf  > "gps_test.list"
    text	   data	    bss	    dec	    hex	filename
-  20356	     92	   2324	  22772	   58f4	ADC.elf
+  21464	    104	   2720	  24288	   5ee0	gps_test.elf
 Finished building: default.size.stdout
  
-Finished building: ADC.list
+Finished building: gps_test.list
  
-11:03:04 **** Incremental Build of configuration Debug for project ADC ****
+09:52:39 **** Incremental Build of configuration Debug for project gps_test ****
 make -j4 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "ADC.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\ADC\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADC.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: ADC.elf
+../Core/Src/main.c: In function 'analisarGPGGA':
+../Core/Src/main.c:87:42: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
+   87 |                 dados->latitudeInteira = atoi(token) / 100;
+      |                                          ^~~~
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:128:44: warning: too many arguments for format [-Wformat-extra-args]
+  128 |                 sprintf(bufferTransmissao, "\r\n", bufferRecepcao);
+      |                                            ^~~~~~
+arm-none-eabi-gcc -o "gps_test.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\gps_test\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="gps_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: gps_test.elf
  
-arm-none-eabi-size  ADC.elf 
-arm-none-eabi-objdump -h -S ADC.elf  > "ADC.list"
+arm-none-eabi-size  gps_test.elf 
+arm-none-eabi-objdump -h -S gps_test.elf  > "gps_test.list"
    text	   data	    bss	    dec	    hex	filename
-  20356	     92	   2324	  22772	   58f4	ADC.elf
+  17220	     92	   2716	  20028	   4e3c	gps_test.elf
 Finished building: default.size.stdout
  
-Finished building: ADC.list
+Finished building: gps_test.list
  
-11:06:20 **** Incremental Build of configuration Debug for project ADC ****
+09:57:10 **** Incremental Build of configuration Debug for project gps_test ****
 make -j4 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c:82:6: error: redefinition of 'HAL_ADC_ConvCpltCallback'
-   82 | void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc) {
-      |      ^~~~~~~~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:70:6: note: previous definition of 'HAL_ADC_ConvCpltCallback' with type 'void(ADC_HandleTypeDef *)'
-   70 | void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc) {
-      |      ^~~~~~~~~~~~~~~~~~~~~~~~
-make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
-"make -j4 all" terminated with exit code 2. Build might be incomplete.
-11:17:37 **** Incremental Build of configuration Debug for project ADC ****
-make -j4 all 
-arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal.o"
-arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc.o"
-arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_adc_ex.o"
-arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_cortex.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_cortex.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_cortex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_cortex.o"
-arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma.o"
-arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma_ex.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma_ex.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma_ex.o"
-arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_exti.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_exti.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_exti.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_exti.o"
-arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.o"
-arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash_ex.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash_ex.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash_ex.o"
-arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_gpio.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_gpio.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_gpio.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_gpio.o"
-arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr.o"
-arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr_ex.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr_ex.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr_ex.o"
-arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc.o"
-arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc_ex.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc_ex.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc_ex.o"
-arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim.o"
-arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim_ex.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim_ex.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim_ex.o"
-arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_uart.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_uart.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_uart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_uart.o"
-arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_uart_ex.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_uart_ex.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_uart_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_uart_ex.o"
-arm-none-eabi-gcc -mcpu=cortex-m0plus -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Startup/startup_stm32c011f6px.d" -MT"Core/Startup/startup_stm32c011f6px.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Startup/startup_stm32c011f6px.o" "../Core/Startup/startup_stm32c011f6px.s"
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc "../Core/Src/stm32c0xx_hal_msp.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32c0xx_hal_msp.d" -MT"Core/Src/stm32c0xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32c0xx_hal_msp.o"
-arm-none-eabi-gcc "../Core/Src/stm32c0xx_it.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32c0xx_it.d" -MT"Core/Src/stm32c0xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32c0xx_it.o"
-arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/syscalls.o"
-arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/sysmem.o"
-arm-none-eabi-gcc "../Core/Src/system_stm32c0xx.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32c0xx.d" -MT"Core/Src/system_stm32c0xx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/system_stm32c0xx.o"
-arm-none-eabi-gcc -o "ADC.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\ADC\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADC.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: ADC.elf
+../Core/Src/main.c: In function 'analisarGPGGA':
+../Core/Src/main.c:87:42: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
+   87 |                 dados->latitudeInteira = atoi(token) / 100;
+      |                                          ^~~~
+arm-none-eabi-gcc -o "gps_test.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\gps_test\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="gps_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: gps_test.elf
  
-arm-none-eabi-size  ADC.elf 
-arm-none-eabi-objdump -h -S ADC.elf  > "ADC.list"
+arm-none-eabi-size  gps_test.elf 
+arm-none-eabi-objdump -h -S gps_test.elf  > "gps_test.list"
    text	   data	    bss	    dec	    hex	filename
-  19780	     92	   2324	  22196	   56b4	ADC.elf
+  14684	     12	   2124	  16820	   41b4	gps_test.elf
 Finished building: default.size.stdout
  
-Finished building: ADC.list
+Finished building: gps_test.list
  
-11:21:44 **** Incremental Build of configuration Debug for project ADC ****
+10:02:40 **** Incremental Build of configuration Debug for project gps_test ****
 make -j4 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "ADC.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\ADC\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADC.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-C:/ST/STM32CubeIDE_1.15.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/stm32c0xx_it.o: in function `DMA1_Channel1_IRQHandler':
-C:/Users/User/STM32CubeIDE/workspace_1.15.1/ProjetosFranzininho/ADC/Debug/../Core/Src/stm32c0xx_it.c:148: multiple definition of `DMA1_Channel1_IRQHandler'; ./Core/Src/main.o:C:/Users/User/STM32CubeIDE/workspace_1.15.1/ProjetosFranzininho/ADC/Debug/../Core/Src/main.c:80: first defined here
-collect2.exe: error: ld returned 1 exit status
-make: *** [makefile:64: ADC.elf] Error 1
-"make -j4 all" terminated with exit code 2. Build might be incomplete.
-11:23:37 **** Incremental Build of configuration Debug for project ADC ****
-make -j4 all 
-arm-none-eabi-gcc -o "ADC.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\ADC\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADC.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-C:/ST/STM32CubeIDE_1.15.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.100.202403111256/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld.exe: ./Core/Src/stm32c0xx_it.o: in function `DMA1_Channel1_IRQHandler':
-C:/Users/User/STM32CubeIDE/workspace_1.15.1/ProjetosFranzininho/ADC/Debug/../Core/Src/stm32c0xx_it.c:148: multiple definition of `DMA1_Channel1_IRQHandler'; ./Core/Src/main.o:C:/Users/User/STM32CubeIDE/workspace_1.15.1/ProjetosFranzininho/ADC/Debug/../Core/Src/main.c:80: first defined here
-collect2.exe: error: ld returned 1 exit status
-make: *** [makefile:64: ADC.elf] Error 1
-"make -j4 all" terminated with exit code 2. Build might be incomplete.
-11:25:21 **** Incremental Build of configuration Debug for project ADC ****
-make -j4 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c:82:6: error: redefinition of 'HAL_ADC_ConvCpltCallback'
-   82 | void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc) {
-      |      ^~~~~~~~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:70:6: note: previous definition of 'HAL_ADC_ConvCpltCallback' with type 'void(ADC_HandleTypeDef *)'
-   70 | void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc) {
-      |      ^~~~~~~~~~~~~~~~~~~~~~~~
-make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
-"make -j4 all" terminated with exit code 2. Build might be incomplete.
-11:26:30 **** Incremental Build of configuration Debug for project ADC ****
-make -j4 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "ADC.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\ADC\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADC.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: ADC.elf
+../Core/Src/main.c: In function 'analisarGPGGA':
+../Core/Src/main.c:87:42: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
+   87 |                 dados->latitudeInteira = atoi(token) / 100;
+      |                                          ^~~~
+arm-none-eabi-gcc -o "gps_test.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\gps_test\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="gps_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: gps_test.elf
  
-arm-none-eabi-size  ADC.elf 
-arm-none-eabi-objdump -h -S ADC.elf  > "ADC.list"
+arm-none-eabi-size  gps_test.elf 
+arm-none-eabi-objdump -h -S gps_test.elf  > "gps_test.list"
    text	   data	    bss	    dec	    hex	filename
-  20356	     92	   2324	  22772	   58f4	ADC.elf
+  14676	     12	   2124	  16812	   41ac	gps_test.elf
 Finished building: default.size.stdout
  
-Finished building: ADC.list
+Finished building: gps_test.list
  
-11:30:13 **** Incremental Build of configuration Debug for project ADC ****
+10:03:45 **** Incremental Build of configuration Debug for project gps_test ****
 make -j4 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "ADC.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\ADC\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADC.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: ADC.elf
+../Core/Src/main.c: In function 'analisarGPGGA':
+../Core/Src/main.c:87:42: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
+   87 |                 dados->latitudeInteira = atoi(token) / 100;
+      |                                          ^~~~
+arm-none-eabi-gcc -o "gps_test.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\gps_test\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="gps_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: gps_test.elf
  
-arm-none-eabi-size  ADC.elf 
-arm-none-eabi-objdump -h -S ADC.elf  > "ADC.list"
+arm-none-eabi-size  gps_test.elf 
+arm-none-eabi-objdump -h -S gps_test.elf  > "gps_test.list"
    text	   data	    bss	    dec	    hex	filename
-  19544	     92	   2316	  21952	   55c0	ADC.elf
+  14676	     12	   2124	  16812	   41ac	gps_test.elf
 Finished building: default.size.stdout
  
-Finished building: ADC.list
+Finished building: gps_test.list
  
-11:54:44 **** Incremental Build of configuration Debug for project ADC ****
+10:04:16 **** Incremental Build of configuration Debug for project gps_test ****
 make -j4 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "ADC.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\ADC\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADC.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: ADC.elf
+../Core/Src/main.c: In function 'analisarGPGGA':
+../Core/Src/main.c:87:42: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
+   87 |                 dados->latitudeInteira = atoi(token) / 100;
+      |                                          ^~~~
+arm-none-eabi-gcc -o "gps_test.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\gps_test\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="gps_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: gps_test.elf
  
-arm-none-eabi-size  ADC.elf 
-arm-none-eabi-objdump -h -S ADC.elf  > "ADC.list"
+arm-none-eabi-size  gps_test.elf 
+arm-none-eabi-objdump -h -S gps_test.elf  > "gps_test.list"
    text	   data	    bss	    dec	    hex	filename
-  19044	     92	   2316	  21452	   53cc	ADC.elf
+  14676	     12	   2124	  16812	   41ac	gps_test.elf
 Finished building: default.size.stdout
  
-Finished building: ADC.list
+Finished building: gps_test.list
  
-12:02:48 **** Incremental Build of configuration Debug for project ADC ****
+10:06:44 **** Incremental Build of configuration Debug for project gps_test ****
 make -j4 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "ADC.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\ADC\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ADC.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: ADC.elf
+../Core/Src/main.c: In function 'analisarGPGGA':
+../Core/Src/main.c:87:42: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
+   87 |                 dados->latitudeInteira = atoi(token) / 100;
+      |                                          ^~~~
+arm-none-eabi-gcc -o "gps_test.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\gps_test\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="gps_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: gps_test.elf
  
-arm-none-eabi-size  ADC.elf 
-arm-none-eabi-objdump -h -S ADC.elf  > "ADC.list"
+arm-none-eabi-size  gps_test.elf 
+arm-none-eabi-objdump -h -S gps_test.elf  > "gps_test.list"
    text	   data	    bss	    dec	    hex	filename
-  20356	     92	   2324	  22772	   58f4	ADC.elf
+  14716	     12	   2124	  16852	   41d4	gps_test.elf
 Finished building: default.size.stdout
  
-Finished building: ADC.list
+Finished building: gps_test.list
  
-11:26:28 **** Build of configuration Debug for project pwm ****
+10:09:11 **** Incremental Build of configuration Debug for project gps_test ****
 make -j4 all 
-arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal.o"
-arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_cortex.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_cortex.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_cortex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_cortex.o"
-arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma.o"
-arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma_ex.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma_ex.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_dma_ex.o"
-arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_exti.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_exti.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_exti.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_exti.o"
-arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash.o"
-arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash_ex.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash_ex.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_flash_ex.o"
-arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_gpio.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_gpio.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_gpio.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_gpio.o"
-arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr.o"
-arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr_ex.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr_ex.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_pwr_ex.o"
-arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc.o"
-arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc_ex.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc_ex.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc_ex.o"
-arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim.o"
-arm-none-eabi-gcc "../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim_ex.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim_ex.d" -MT"Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim_ex.o"
-arm-none-eabi-gcc -mcpu=cortex-m0plus -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Startup/startup_stm32c011f6px.d" -MT"Core/Startup/startup_stm32c011f6px.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Startup/startup_stm32c011f6px.o" "../Core/Startup/startup_stm32c011f6px.s"
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc "../Core/Src/stm32c0xx_hal_msp.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32c0xx_hal_msp.d" -MT"Core/Src/stm32c0xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32c0xx_hal_msp.o"
-arm-none-eabi-gcc "../Core/Src/stm32c0xx_it.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32c0xx_it.d" -MT"Core/Src/stm32c0xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32c0xx_it.o"
-arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/syscalls.o"
-arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/sysmem.o"
-arm-none-eabi-gcc "../Core/Src/system_stm32c0xx.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32c0xx.d" -MT"Core/Src/system_stm32c0xx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/system_stm32c0xx.o"
-arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\pwm\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: pwm.elf
+../Core/Src/main.c: In function 'analisarGPGGA':
+../Core/Src/main.c:87:42: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
+   87 |                 dados->latitudeInteira = atoi(token) / 100;
+      |                                          ^~~~
+arm-none-eabi-gcc -o "gps_test.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\gps_test\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="gps_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: gps_test.elf
  
-arm-none-eabi-size  pwm.elf 
-arm-none-eabi-objdump -h -S pwm.elf  > "pwm.list"
+arm-none-eabi-size  gps_test.elf 
+arm-none-eabi-objdump -h -S gps_test.elf  > "gps_test.list"
    text	   data	    bss	    dec	    hex	filename
-   8564	     12	   1644	  10220	   27ec	pwm.elf
+  14824	     12	   2124	  16960	   4240	gps_test.elf
 Finished building: default.size.stdout
  
-Finished building: pwm.list
+Finished building: gps_test.list
  
-11:27:06 **** Incremental Build of configuration Debug for project pwm ****
+10:11:12 **** Incremental Build of configuration Debug for project gps_test ****
 make -j4 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-In file included from ../Core/Inc/stm32c0xx_hal_conf.h:237,
-                 from ../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal.h:30,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Core/Src/main.c: In function 'atualiza_largura_puslo_LEDS':
-../Core/Src/main.c:66:54: error: 'LED1_pwm' undeclared (first use in this function); did you mean 'LED1_pulse'?
-   66 |         __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_3, LED1_pwm);
-      |                                                      ^~~~~~~~
-../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_tim.h:1573:72: note: in definition of macro '__HAL_TIM_SET_COMPARE'
- 1573 |   (((__CHANNEL__) == TIM_CHANNEL_1) ? ((__HANDLE__)->Instance->CCR1 = (__COMPARE__)) :\
-      |                                                                        ^~~~~~~~~~~
-../Core/Src/main.c:66:54: note: each undeclared identifier is reported only once for each function it appears in
-   66 |         __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_3, LED1_pwm);
-      |                                                      ^~~~~~~~
-../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_tim.h:1573:72: note: in definition of macro '__HAL_TIM_SET_COMPARE'
- 1573 |   (((__CHANNEL__) == TIM_CHANNEL_1) ? ((__HANDLE__)->Instance->CCR1 = (__COMPARE__)) :\
-      |                                                                        ^~~~~~~~~~~
-../Core/Src/main.c:67:54: error: 'LED2_pwm' undeclared (first use in this function); did you mean 'LED2_pulse'?
-   67 |         __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_4, LED2_pwm);
-      |                                                      ^~~~~~~~
-../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_tim.h:1573:72: note: in definition of macro '__HAL_TIM_SET_COMPARE'
- 1573 |   (((__CHANNEL__) == TIM_CHANNEL_1) ? ((__HANDLE__)->Instance->CCR1 = (__COMPARE__)) :\
-      |                                                                        ^~~~~~~~~~~
-../Core/Src/main.c:64:13: warning: unused variable 'LED2_pulse' [-Wunused-variable]
-   64 |         int LED2_pulse = 1000 - i;
-      |             ^~~~~~~~~~
-../Core/Src/main.c:63:13: warning: unused variable 'LED1_pulse' [-Wunused-variable]
-   63 |         int LED1_pulse = i;
-      |             ^~~~~~~~~~
-make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
-"make -j4 all" terminated with exit code 2. Build might be incomplete.
-11:27:31 **** Incremental Build of configuration Debug for project pwm ****
-make -j4 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "pwm.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\pwm\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="pwm.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: pwm.elf
+../Core/Src/main.c: In function 'analisarGPGGA':
+../Core/Src/main.c:87:42: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
+   87 |                 dados->latitudeInteira = atoi(token) / 100;
+      |                                          ^~~~
+arm-none-eabi-gcc -o "gps_test.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\gps_test\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="gps_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: gps_test.elf
  
-arm-none-eabi-size  pwm.elf 
-arm-none-eabi-objdump -h -S pwm.elf  > "pwm.list"
+arm-none-eabi-size  gps_test.elf 
+arm-none-eabi-objdump -h -S gps_test.elf  > "gps_test.list"
    text	   data	    bss	    dec	    hex	filename
-   9280	     12	   1644	  10936	   2ab8	pwm.elf
+  21412	    104	   2720	  24236	   5eac	gps_test.elf
 Finished building: default.size.stdout
  
-Finished building: pwm.list
+Finished building: gps_test.list
  

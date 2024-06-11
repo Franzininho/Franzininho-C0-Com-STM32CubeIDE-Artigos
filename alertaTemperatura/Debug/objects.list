@@ -21,3 +21,5 @@
 "./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rcc_ex.o"
 "./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim.o"
 "./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_tim_ex.o"
+"./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_uart.o"
+"./Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_uart_ex.o"

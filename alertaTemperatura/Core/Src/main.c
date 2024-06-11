@@ -21,7 +21,9 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "stdio.h"
 #include "math.h"
+#include "string.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -42,7 +44,7 @@
 /* Private variables ---------------------------------------------------------*/
 ADC_HandleTypeDef hadc1;
 
-TIM_HandleTypeDef htim3;
+UART_HandleTypeDef huart1;
 
 /* USER CODE BEGIN PV */
 
@@ -60,11 +62,11 @@ TIM_HandleTypeDef htim3;
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_ADC1_Init(void);
-static void MX_TIM3_Init(void);
+static void MX_USART1_UART_Init(void);
 /* USER CODE BEGIN PFP */
 float calcular_temperatura(uint32_t leitura);
 void controlar_leds_e_buzzer(float temperatura);
-
+void transmitir_temperatura(float temperatura);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -89,7 +91,7 @@ void controlar_leds_e_buzzer(float temperatura) {
         HAL_GPIO_WritePin(RED_GPIO_Port, RED_Pin, GPIO_PIN_RESET);
         // Ligar buzzer
         HAL_GPIO_WritePin(BUZZER_GPIO_Port, BUZZER_Pin, GPIO_PIN_SET);
-    } else if (temperatura > 15 && temperatura <= 25) {
+    } else if (temperatura > 15 && temperatura <= 30) {
         // Ligar LED verde
         HAL_GPIO_WritePin(GREEN_GPIO_Port, GREEN_Pin, GPIO_PIN_SET);
         // Desligar outros LEDs
@@ -97,7 +99,7 @@ void controlar_leds_e_buzzer(float temperatura) {
         HAL_GPIO_WritePin(RED_GPIO_Port, RED_Pin, GPIO_PIN_RESET);
         // Desligar buzzer
         HAL_GPIO_WritePin(BUZZER_GPIO_Port, BUZZER_Pin, GPIO_PIN_RESET);
-    } else if (temperatura > 25) {
+    } else if (temperatura > 30) {
         // Ligar LED vermelho
         HAL_GPIO_WritePin(RED_GPIO_Port, RED_Pin, GPIO_PIN_SET);
         // Desligar outros LEDs
@@ -106,6 +108,19 @@ void controlar_leds_e_buzzer(float temperatura) {
         // Ligar buzzer
         HAL_GPIO_WritePin(BUZZER_GPIO_Port, BUZZER_Pin, GPIO_PIN_SET);
     }
+}
+
+void transmitir_temperatura(float temperatura) {
+    // Divida a temperatura em parte inteira e parte decimal
+    int parte_inteira = (int)temperatura;
+    int parte_decimal = (int)((temperatura - parte_inteira) * 100); // Duas casas decimais
+
+    // Buffer para a string a ser transmitida
+    char buffer[50];
+
+    // Converta as partes para string e envie via UART
+    sprintf(buffer, "Temperatura: %d.%02d\r\n", parte_inteira, parte_decimal);
+    HAL_UART_Transmit(&huart1, (uint8_t*)buffer, strlen(buffer), HAL_MAX_DELAY);
 }
 
 /* USER CODE END 0 */
@@ -140,7 +155,7 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_ADC1_Init();
-  MX_TIM3_Init();
+  MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -152,18 +167,18 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	  // ADC Polling
-	  	      HAL_ADC_Start (&hadc1);   // inicia leitura ADC
-	  	      HAL_ADC_PollForConversion (&hadc1, 1000); //aguarda conversao seja concluida
-	  	      uint32_t leitura = HAL_ADC_GetValue (&hadc1); //  armazenar o valor lido pelo ADC
-	  	      HAL_ADC_Stop(&hadc1);
-	  	      // Calcula a temperatura
-	  	      float temperatura = calcular_temperatura(leitura);
-	  	      // Controla os LEDs e o buzzer baseado na temperatura
-	  	      controlar_leds_e_buzzer(temperatura);
-	  if(__HAL_TIM_GET_FLAG(&htim3, TIM_FLAG_UPDATE)){
-		 __HAL_TIM_CLEAR_FLAG(&htim3, TIM_FLAG_UPDATE);
-	 }
+	// ADC Polling
+	HAL_ADC_Start (&hadc1);   // inicia leitura ADC
+	HAL_ADC_PollForConversion (&hadc1, 1000); //aguarda conversao seja concluida
+	uint32_t leitura = HAL_ADC_GetValue (&hadc1); //  armazenar o valor lido pelo ADC
+	HAL_ADC_Stop(&hadc1);
+	// Calcula a temperatura
+	float temperatura = calcular_temperatura(leitura);
+	// Controla os LEDs e o buzzer baseado na temperatura
+	controlar_leds_e_buzzer(temperatura);
+	// Transmite a temperatura via UART
+	transmitir_temperatura(temperatura);
+
   }
   /* USER CODE END 3 */
 }
@@ -264,47 +279,50 @@ static void MX_ADC1_Init(void)
 }
 
 /**
-  * @brief TIM3 Initialization Function
+  * @brief USART1 Initialization Function
   * @param None
   * @retval None
   */
-static void MX_TIM3_Init(void)
+static void MX_USART1_UART_Init(void)
 {
 
-  /* USER CODE BEGIN TIM3_Init 0 */
+  /* USER CODE BEGIN USART1_Init 0 */
 
-  /* USER CODE END TIM3_Init 0 */
+  /* USER CODE END USART1_Init 0 */
 
-  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
-  TIM_MasterConfigTypeDef sMasterConfig = {0};
+  /* USER CODE BEGIN USART1_Init 1 */
 
-  /* USER CODE BEGIN TIM3_Init 1 */
-
-  /* USER CODE END TIM3_Init 1 */
-  htim3.Instance = TIM3;
-  htim3.Init.Prescaler = 48000-1;
-  htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim3.Init.Period = 1000-1;
-  htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
-  htim3.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
-  if (HAL_TIM_Base_Init(&htim3) != HAL_OK)
+  /* USER CODE END USART1_Init 1 */
+  huart1.Instance = USART1;
+  huart1.Init.BaudRate = 115200;
+  huart1.Init.WordLength = UART_WORDLENGTH_8B;
+  huart1.Init.StopBits = UART_STOPBITS_1;
+  huart1.Init.Parity = UART_PARITY_NONE;
+  huart1.Init.Mode = UART_MODE_TX_RX;
+  huart1.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart1.Init.OverSampling = UART_OVERSAMPLING_16;
+  huart1.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
+  huart1.Init.ClockPrescaler = UART_PRESCALER_DIV1;
+  huart1.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
+  if (HAL_UART_Init(&huart1) != HAL_OK)
   {
     Error_Handler();
   }
-  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
-  if (HAL_TIM_ConfigClockSource(&htim3, &sClockSourceConfig) != HAL_OK)
+  if (HAL_UARTEx_SetTxFifoThreshold(&huart1, UART_TXFIFO_THRESHOLD_1_8) != HAL_OK)
   {
     Error_Handler();
   }
-  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
-  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
-  if (HAL_TIMEx_MasterConfigSynchronization(&htim3, &sMasterConfig) != HAL_OK)
+  if (HAL_UARTEx_SetRxFifoThreshold(&huart1, UART_RXFIFO_THRESHOLD_1_8) != HAL_OK)
   {
     Error_Handler();
   }
-  /* USER CODE BEGIN TIM3_Init 2 */
+  if (HAL_UARTEx_DisableFifoMode(&huart1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN USART1_Init 2 */
 
-  /* USER CODE END TIM3_Init 2 */
+  /* USER CODE END USART1_Init 2 */
 
 }
 

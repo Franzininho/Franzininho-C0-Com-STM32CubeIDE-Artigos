@@ -812,10 +812,10 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
  800060c:	f000 f8d6 	bl	80007bc <MX_GPIO_Init>
-  MX_USART2_UART_Init();
- 8000610:	f000 f8a0 	bl	8000754 <MX_USART2_UART_Init>
   MX_USART1_UART_Init();
- 8000614:	f000 f850 	bl	80006b8 <MX_USART1_UART_Init>
+ 8000610:	f000 f852 	bl	80006b8 <MX_USART1_UART_Init>
+  MX_USART2_UART_Init();
+ 8000614:	f000 f89e 	bl	8000754 <MX_USART2_UART_Init>
   /* USER CODE BEGIN 2 */
   HAL_UART_Receive_IT(&huart2, &dadoRecebido, 1);
  8000618:	4903      	ldr	r1, [pc, #12]	@ (8000628 <main+0x28>)
@@ -871,66 +871,66 @@ void SystemClock_Config(void)
  800065c:	2280      	movs	r2, #128	@ 0x80
  800065e:	0052      	lsls	r2, r2, #1
  8000660:	60da      	str	r2, [r3, #12]
-  RCC_OscInitStruct.HSIDiv = RCC_HSI_DIV4;
+  RCC_OscInitStruct.HSIDiv = RCC_HSI_DIV1;
  8000662:	193b      	adds	r3, r7, r4
- 8000664:	2280      	movs	r2, #128	@ 0x80
- 8000666:	0152      	lsls	r2, r2, #5
- 8000668:	611a      	str	r2, [r3, #16]
+ 8000664:	2200      	movs	r2, #0
+ 8000666:	611a      	str	r2, [r3, #16]
   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
- 800066a:	193b      	adds	r3, r7, r4
- 800066c:	2240      	movs	r2, #64	@ 0x40
- 800066e:	615a      	str	r2, [r3, #20]
+ 8000668:	193b      	adds	r3, r7, r4
+ 800066a:	2240      	movs	r2, #64	@ 0x40
+ 800066c:	615a      	str	r2, [r3, #20]
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
- 8000670:	193b      	adds	r3, r7, r4
- 8000672:	0018      	movs	r0, r3
- 8000674:	f000 fe54 	bl	8001320 <HAL_RCC_OscConfig>
- 8000678:	1e03      	subs	r3, r0, #0
- 800067a:	d001      	beq.n	8000680 <SystemClock_Config+0x50>
+ 800066e:	193b      	adds	r3, r7, r4
+ 8000670:	0018      	movs	r0, r3
+ 8000672:	f000 fe55 	bl	8001320 <HAL_RCC_OscConfig>
+ 8000676:	1e03      	subs	r3, r0, #0
+ 8000678:	d001      	beq.n	800067e <SystemClock_Config+0x4e>
   {
     Error_Handler();
- 800067c:	f000 f8b4 	bl	80007e8 <Error_Handler>
+ 800067a:	f000 f8b5 	bl	80007e8 <Error_Handler>
   }
 
   /** Initializes the CPU, AHB and APB buses clocks
   */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
- 8000680:	003b      	movs	r3, r7
- 8000682:	2207      	movs	r2, #7
- 8000684:	601a      	str	r2, [r3, #0]
+ 800067e:	003b      	movs	r3, r7
+ 8000680:	2207      	movs	r2, #7
+ 8000682:	601a      	str	r2, [r3, #0]
                               |RCC_CLOCKTYPE_PCLK1;
   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI;
- 8000686:	003b      	movs	r3, r7
- 8000688:	2200      	movs	r2, #0
- 800068a:	605a      	str	r2, [r3, #4]
+ 8000684:	003b      	movs	r3, r7
+ 8000686:	2200      	movs	r2, #0
+ 8000688:	605a      	str	r2, [r3, #4]
   RCC_ClkInitStruct.SYSCLKDivider = RCC_SYSCLK_DIV1;
- 800068c:	003b      	movs	r3, r7
- 800068e:	2200      	movs	r2, #0
- 8000690:	609a      	str	r2, [r3, #8]
+ 800068a:	003b      	movs	r3, r7
+ 800068c:	2200      	movs	r2, #0
+ 800068e:	609a      	str	r2, [r3, #8]
   RCC_ClkInitStruct.AHBCLKDivider = RCC_HCLK_DIV1;
- 8000692:	003b      	movs	r3, r7
- 8000694:	2200      	movs	r2, #0
- 8000696:	60da      	str	r2, [r3, #12]
+ 8000690:	003b      	movs	r3, r7
+ 8000692:	2200      	movs	r2, #0
+ 8000694:	60da      	str	r2, [r3, #12]
   RCC_ClkInitStruct.APB1CLKDivider = RCC_APB1_DIV1;
- 8000698:	003b      	movs	r3, r7
- 800069a:	2200      	movs	r2, #0
- 800069c:	611a      	str	r2, [r3, #16]
+ 8000696:	003b      	movs	r3, r7
+ 8000698:	2200      	movs	r2, #0
+ 800069a:	611a      	str	r2, [r3, #16]
 
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_0) != HAL_OK)
- 800069e:	003b      	movs	r3, r7
- 80006a0:	2100      	movs	r1, #0
- 80006a2:	0018      	movs	r0, r3
- 80006a4:	f001 f820 	bl	80016e8 <HAL_RCC_ClockConfig>
- 80006a8:	1e03      	subs	r3, r0, #0
- 80006aa:	d001      	beq.n	80006b0 <SystemClock_Config+0x80>
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_1) != HAL_OK)
+ 800069c:	003b      	movs	r3, r7
+ 800069e:	2101      	movs	r1, #1
+ 80006a0:	0018      	movs	r0, r3
+ 80006a2:	f001 f821 	bl	80016e8 <HAL_RCC_ClockConfig>
+ 80006a6:	1e03      	subs	r3, r0, #0
+ 80006a8:	d001      	beq.n	80006ae <SystemClock_Config+0x7e>
   {
     Error_Handler();
- 80006ac:	f000 f89c 	bl	80007e8 <Error_Handler>
+ 80006aa:	f000 f89d 	bl	80007e8 <Error_Handler>
   }
 }
- 80006b0:	46c0      	nop			@ (mov r8, r8)
- 80006b2:	46bd      	mov	sp, r7
- 80006b4:	b00d      	add	sp, #52	@ 0x34
- 80006b6:	bd90      	pop	{r4, r7, pc}
+ 80006ae:	46c0      	nop			@ (mov r8, r8)
+ 80006b0:	46bd      	mov	sp, r7
+ 80006b2:	b00d      	add	sp, #52	@ 0x34
+ 80006b4:	bd90      	pop	{r4, r7, pc}
+	...
 
 080006b8 <MX_USART1_UART_Init>:
   * @brief USART1 Initialization Function

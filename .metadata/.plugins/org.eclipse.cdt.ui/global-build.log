@@ -1,234 +1,44 @@
-09:28:33 **** Incremental Build of configuration Debug for project gps_test ****
+13:50:01 **** Incremental Build of configuration Debug for project alertaTemperatura ****
 make -j4 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'analisarGPGGA':
-../Core/Src/main.c:87:42: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
-   87 |                 dados->latitudeInteira = atoi(token) / 100;
-      |                                          ^~~~
-arm-none-eabi-gcc -o "gps_test.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\gps_test\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="gps_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: gps_test.elf
+arm-none-eabi-gcc "../Core/Src/stm32c0xx_hal_msp.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32c0xx_hal_msp.d" -MT"Core/Src/stm32c0xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32c0xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32c0xx_it.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32c0xx_it.d" -MT"Core/Src/stm32c0xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32c0xx_it.o"
+arm-none-eabi-gcc -o "alertaTemperatura.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\alertaTemperatura\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="alertaTemperatura.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: alertaTemperatura.elf
  
-arm-none-eabi-size  gps_test.elf 
-arm-none-eabi-objdump -h -S gps_test.elf  > "gps_test.list"
+arm-none-eabi-size  alertaTemperatura.elf 
+arm-none-eabi-objdump -h -S alertaTemperatura.elf  > "alertaTemperatura.list"
    text	   data	    bss	    dec	    hex	filename
-  21412	    104	   2720	  24236	   5eac	gps_test.elf
+  24284	     92	   2060	  26436	   6744	alertaTemperatura.elf
 Finished building: default.size.stdout
  
-Finished building: gps_test.list
+Finished building: alertaTemperatura.list
  
-09:30:18 **** Incremental Build of configuration Debug for project gps_test ****
+13:54:01 **** Incremental Build of configuration Debug for project alertaTemperatura ****
+make -j4 all 
+arm-none-eabi-size  alertaTemperatura.elf 
+   text	   data	    bss	    dec	    hex	filename
+  24284	     92	   2060	  26436	   6744	alertaTemperatura.elf
+Finished building: default.size.stdout
+ 
+13:54:11 **** Incremental Build of configuration Debug for project alertaTemperatura ****
+make -j4 all 
+arm-none-eabi-size  alertaTemperatura.elf 
+   text	   data	    bss	    dec	    hex	filename
+  24284	     92	   2060	  26436	   6744	alertaTemperatura.elf
+Finished building: default.size.stdout
+ 
+13:58:54 **** Incremental Build of configuration Debug for project alertaTemperatura ****
 make -j4 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'analisarGPGGA':
-../Core/Src/main.c:87:42: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
-   87 |                 dados->latitudeInteira = atoi(token) / 100;
-      |                                          ^~~~
-arm-none-eabi-gcc -o "gps_test.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\gps_test\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="gps_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: gps_test.elf
+arm-none-eabi-gcc -o "alertaTemperatura.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\alertaTemperatura\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="alertaTemperatura.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: alertaTemperatura.elf
  
-arm-none-eabi-size  gps_test.elf 
-arm-none-eabi-objdump -h -S gps_test.elf  > "gps_test.list"
+arm-none-eabi-size  alertaTemperatura.elf 
+arm-none-eabi-objdump -h -S alertaTemperatura.elf  > "alertaTemperatura.list"
    text	   data	    bss	    dec	    hex	filename
-  21412	    104	   2720	  24236	   5eac	gps_test.elf
+  24284	     92	   2060	  26436	   6744	alertaTemperatura.elf
 Finished building: default.size.stdout
  
-Finished building: gps_test.list
- 
-09:32:12 **** Incremental Build of configuration Debug for project gps_test ****
-make -j4 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'analisarGPGGA':
-../Core/Src/main.c:87:42: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
-   87 |                 dados->latitudeInteira = atoi(token) / 100;
-      |                                          ^~~~
-../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
-../Core/Src/main.c:128:78: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
-  128 |                 HAL_UART_Transmit(&huart1, (uint8_t *)bufferRecepcao, strlen(bufferRecepcao), 1000);
-      |                                                                              ^~~~~~~~~~~~~~
-      |                                                                              |
-      |                                                                              uint8_t * {aka unsigned char *}
-In file included from ../Core/Src/main.c:24:
-C:\ST\STM32CubeIDE_1.15.1\STM32CubeIDE\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.100.202403111256\tools\bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/include/string.h:41:18: note: expected 'const char *' but argument is of type 'uint8_t *' {aka 'unsigned char *'}
-   41 | size_t   strlen (const char *);
-      |                  ^~~~~~~~~~~~
-arm-none-eabi-gcc -o "gps_test.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\gps_test\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="gps_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: gps_test.elf
- 
-arm-none-eabi-size  gps_test.elf 
-arm-none-eabi-objdump -h -S gps_test.elf  > "gps_test.list"
-   text	   data	    bss	    dec	    hex	filename
-  14676	     12	   2124	  16812	   41ac	gps_test.elf
-Finished building: default.size.stdout
- 
-Finished building: gps_test.list
- 
-09:52:17 **** Incremental Build of configuration Debug for project gps_test ****
-make -j4 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'analisarGPGGA':
-../Core/Src/main.c:87:42: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
-   87 |                 dados->latitudeInteira = atoi(token) / 100;
-      |                                          ^~~~
-../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
-../Core/Src/main.c:128:44: warning: too many arguments for format [-Wformat-extra-args]
-  128 |                 sprintf(bufferTransmissao, "\r\n", bufferRecepcao);
-      |                                            ^~~~~~
-arm-none-eabi-gcc -o "gps_test.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\gps_test\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="gps_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: gps_test.elf
- 
-arm-none-eabi-size  gps_test.elf 
-arm-none-eabi-objdump -h -S gps_test.elf  > "gps_test.list"
-   text	   data	    bss	    dec	    hex	filename
-  21464	    104	   2720	  24288	   5ee0	gps_test.elf
-Finished building: default.size.stdout
- 
-Finished building: gps_test.list
- 
-09:52:39 **** Incremental Build of configuration Debug for project gps_test ****
-make -j4 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'analisarGPGGA':
-../Core/Src/main.c:87:42: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
-   87 |                 dados->latitudeInteira = atoi(token) / 100;
-      |                                          ^~~~
-../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
-../Core/Src/main.c:128:44: warning: too many arguments for format [-Wformat-extra-args]
-  128 |                 sprintf(bufferTransmissao, "\r\n", bufferRecepcao);
-      |                                            ^~~~~~
-arm-none-eabi-gcc -o "gps_test.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\gps_test\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="gps_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: gps_test.elf
- 
-arm-none-eabi-size  gps_test.elf 
-arm-none-eabi-objdump -h -S gps_test.elf  > "gps_test.list"
-   text	   data	    bss	    dec	    hex	filename
-  17220	     92	   2716	  20028	   4e3c	gps_test.elf
-Finished building: default.size.stdout
- 
-Finished building: gps_test.list
- 
-09:57:10 **** Incremental Build of configuration Debug for project gps_test ****
-make -j4 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'analisarGPGGA':
-../Core/Src/main.c:87:42: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
-   87 |                 dados->latitudeInteira = atoi(token) / 100;
-      |                                          ^~~~
-arm-none-eabi-gcc -o "gps_test.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\gps_test\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="gps_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: gps_test.elf
- 
-arm-none-eabi-size  gps_test.elf 
-arm-none-eabi-objdump -h -S gps_test.elf  > "gps_test.list"
-   text	   data	    bss	    dec	    hex	filename
-  14684	     12	   2124	  16820	   41b4	gps_test.elf
-Finished building: default.size.stdout
- 
-Finished building: gps_test.list
- 
-10:02:40 **** Incremental Build of configuration Debug for project gps_test ****
-make -j4 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'analisarGPGGA':
-../Core/Src/main.c:87:42: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
-   87 |                 dados->latitudeInteira = atoi(token) / 100;
-      |                                          ^~~~
-arm-none-eabi-gcc -o "gps_test.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\gps_test\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="gps_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: gps_test.elf
- 
-arm-none-eabi-size  gps_test.elf 
-arm-none-eabi-objdump -h -S gps_test.elf  > "gps_test.list"
-   text	   data	    bss	    dec	    hex	filename
-  14676	     12	   2124	  16812	   41ac	gps_test.elf
-Finished building: default.size.stdout
- 
-Finished building: gps_test.list
- 
-10:03:45 **** Incremental Build of configuration Debug for project gps_test ****
-make -j4 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'analisarGPGGA':
-../Core/Src/main.c:87:42: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
-   87 |                 dados->latitudeInteira = atoi(token) / 100;
-      |                                          ^~~~
-arm-none-eabi-gcc -o "gps_test.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\gps_test\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="gps_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: gps_test.elf
- 
-arm-none-eabi-size  gps_test.elf 
-arm-none-eabi-objdump -h -S gps_test.elf  > "gps_test.list"
-   text	   data	    bss	    dec	    hex	filename
-  14676	     12	   2124	  16812	   41ac	gps_test.elf
-Finished building: default.size.stdout
- 
-Finished building: gps_test.list
- 
-10:04:16 **** Incremental Build of configuration Debug for project gps_test ****
-make -j4 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'analisarGPGGA':
-../Core/Src/main.c:87:42: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
-   87 |                 dados->latitudeInteira = atoi(token) / 100;
-      |                                          ^~~~
-arm-none-eabi-gcc -o "gps_test.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\gps_test\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="gps_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: gps_test.elf
- 
-arm-none-eabi-size  gps_test.elf 
-arm-none-eabi-objdump -h -S gps_test.elf  > "gps_test.list"
-   text	   data	    bss	    dec	    hex	filename
-  14676	     12	   2124	  16812	   41ac	gps_test.elf
-Finished building: default.size.stdout
- 
-Finished building: gps_test.list
- 
-10:06:44 **** Incremental Build of configuration Debug for project gps_test ****
-make -j4 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'analisarGPGGA':
-../Core/Src/main.c:87:42: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
-   87 |                 dados->latitudeInteira = atoi(token) / 100;
-      |                                          ^~~~
-arm-none-eabi-gcc -o "gps_test.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\gps_test\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="gps_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: gps_test.elf
- 
-arm-none-eabi-size  gps_test.elf 
-arm-none-eabi-objdump -h -S gps_test.elf  > "gps_test.list"
-   text	   data	    bss	    dec	    hex	filename
-  14716	     12	   2124	  16852	   41d4	gps_test.elf
-Finished building: default.size.stdout
- 
-Finished building: gps_test.list
- 
-10:09:11 **** Incremental Build of configuration Debug for project gps_test ****
-make -j4 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'analisarGPGGA':
-../Core/Src/main.c:87:42: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
-   87 |                 dados->latitudeInteira = atoi(token) / 100;
-      |                                          ^~~~
-arm-none-eabi-gcc -o "gps_test.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\gps_test\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="gps_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: gps_test.elf
- 
-arm-none-eabi-size  gps_test.elf 
-arm-none-eabi-objdump -h -S gps_test.elf  > "gps_test.list"
-   text	   data	    bss	    dec	    hex	filename
-  14824	     12	   2124	  16960	   4240	gps_test.elf
-Finished building: default.size.stdout
- 
-Finished building: gps_test.list
- 
-10:11:12 **** Incremental Build of configuration Debug for project gps_test ****
-make -j4 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'analisarGPGGA':
-../Core/Src/main.c:87:42: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
-   87 |                 dados->latitudeInteira = atoi(token) / 100;
-      |                                          ^~~~
-arm-none-eabi-gcc -o "gps_test.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\gps_test\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="gps_test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: gps_test.elf
- 
-arm-none-eabi-size  gps_test.elf 
-arm-none-eabi-objdump -h -S gps_test.elf  > "gps_test.list"
-   text	   data	    bss	    dec	    hex	filename
-  21412	    104	   2720	  24236	   5eac	gps_test.elf
-Finished building: default.size.stdout
- 
-Finished building: gps_test.list
+Finished building: alertaTemperatura.list
  

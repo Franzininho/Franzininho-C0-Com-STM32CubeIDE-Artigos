@@ -2739,8 +2739,9 @@ LOAD C:/ST/STM32CubeIDE_1.15.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .text.main     0x08000600       0x30 ./Core/Src/main.o
                 0x08000600                main
  .text.SystemClock_Config
-                0x08000630       0x88 ./Core/Src/main.o
+                0x08000630       0x86 ./Core/Src/main.o
                 0x08000630                SystemClock_Config
+ *fill*         0x080006b6        0x2 
  .text.MX_USART1_UART_Init
                 0x080006b8       0x9c ./Core/Src/main.o
  .text.MX_USART2_UART_Init

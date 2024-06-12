@@ -56,8 +56,6 @@ UART_HandleTypeDef huart1;
 #define B 0.00023245f
 #define C 0.00000009489f
 
-uint32_t leitura;
-float temperatura;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -66,25 +64,25 @@ static void MX_GPIO_Init(void);
 static void MX_ADC1_Init(void);
 static void MX_USART1_UART_Init(void);
 /* USER CODE BEGIN PFP */
-float calcular_temperatura();
-void controlar_leds_e_buzzer();
-void transmitir_temperatura();
+float calcular_temperatura(uint32_t leitura);
+void controlar_leds_e_buzzer(float temperatura);
+void transmitir_temperatura(float temperatura);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-float calcular_temperatura(){
+float calcular_temperatura(uint32_t leitura) {
 	float ntc_resistance;
 	/* calcula resistencia NTC */
 	ntc_resistance = ((resistor)/((4095.0f/leitura) - 1.0f));
 	/* Calcula temperatura usando equacao Steinhart-Hart  */
 	float ntc_ln = log(ntc_resistance);
-	temperatura = (1.0f / (A + B * ntc_ln + C * (ntc_ln * ntc_ln * ntc_ln))) - 273.15f;
+	float temperatura = (1.0f / (A + B * ntc_ln + C * ntc_ln * ntc_ln * ntc_ln)) - 273.15f;
 	return temperatura;
 }
 
 
-void controlar_leds_e_buzzer() {
+void controlar_leds_e_buzzer(float temperatura) {
     if (temperatura <= 15) {
         // Ligar LED azul
         HAL_GPIO_WritePin(BLUE_GPIO_Port, BLUE_Pin, GPIO_PIN_SET);
@@ -112,7 +110,7 @@ void controlar_leds_e_buzzer() {
     }
 }
 
-void transmitir_temperatura() {
+void transmitir_temperatura(float temperatura) {
     // Divida a temperatura em parte inteira e parte decimal
     int parte_inteira = (int)temperatura;
     int parte_decimal = (int)((temperatura - parte_inteira) * 100); // Duas casas decimais
@@ -172,10 +170,10 @@ int main(void)
 	// ADC Polling
 	HAL_ADC_Start (&hadc1);   // inicia leitura ADC
 	HAL_ADC_PollForConversion (&hadc1, 1000); //aguarda conversao seja concluida
-	leitura = HAL_ADC_GetValue (&hadc1); //  armazenar o valor lido pelo ADC
+	uint32_t leitura = HAL_ADC_GetValue (&hadc1); //  armazenar o valor lido pelo ADC
 	HAL_ADC_Stop(&hadc1);
 	// Calcula a temperatura
-	temperatura = calcular_temperatura(leitura);
+	float temperatura = calcular_temperatura(leitura);
 	// Controla os LEDs e o buzzer baseado na temperatura
 	controlar_leds_e_buzzer(temperatura);
 	// Transmite a temperatura via UART

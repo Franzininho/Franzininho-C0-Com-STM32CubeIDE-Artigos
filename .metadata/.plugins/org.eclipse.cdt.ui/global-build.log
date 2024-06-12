@@ -12,3 +12,52 @@ Finished building: default.size.stdout
  
 Finished building: alertaTemperatura.list
  
+08:56:07 **** Incremental Build of configuration Debug for project alertaTemperatura ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "alertaTemperatura.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\alertaTemperatura\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="alertaTemperatura.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: alertaTemperatura.elf
+ 
+arm-none-eabi-size  alertaTemperatura.elf 
+arm-none-eabi-objdump -h -S alertaTemperatura.elf  > "alertaTemperatura.list"
+   text	   data	    bss	    dec	    hex	filename
+  28768	     92	   2156	  31016	   7928	alertaTemperatura.elf
+Finished building: default.size.stdout
+ 
+Finished building: alertaTemperatura.list
+ 
+08:56:48 **** Incremental Build of configuration Debug for project alertaTemperatura ****
+make -j4 all 
+arm-none-eabi-size  alertaTemperatura.elf 
+   text	   data	    bss	    dec	    hex	filename
+  28768	     92	   2156	  31016	   7928	alertaTemperatura.elf
+Finished building: default.size.stdout
+ 
+09:55:45 **** Incremental Build of configuration Debug for project alertaTemperatura ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "alertaTemperatura.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\alertaTemperatura\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="alertaTemperatura.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: alertaTemperatura.elf
+ 
+arm-none-eabi-size  alertaTemperatura.elf 
+arm-none-eabi-objdump -h -S alertaTemperatura.elf  > "alertaTemperatura.list"
+   text	   data	    bss	    dec	    hex	filename
+  28756	     92	   2156	  31004	   791c	alertaTemperatura.elf
+Finished building: default.size.stdout
+ 
+Finished building: alertaTemperatura.list
+ 
+09:56:21 **** Incremental Build of configuration Debug for project alertaTemperatura ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "alertaTemperatura.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\alertaTemperatura\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="alertaTemperatura.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: alertaTemperatura.elf
+ 
+arm-none-eabi-size  alertaTemperatura.elf 
+arm-none-eabi-objdump -h -S alertaTemperatura.elf  > "alertaTemperatura.list"
+   text	   data	    bss	    dec	    hex	filename
+  28768	     92	   2156	  31016	   7928	alertaTemperatura.elf
+Finished building: default.size.stdout
+ 
+Finished building: alertaTemperatura.list
+ 

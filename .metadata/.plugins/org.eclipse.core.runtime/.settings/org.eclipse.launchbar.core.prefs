@@ -17,7 +17,7 @@ org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:InterrupcaoComTimer\ Debug/acti
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:InterrupcaoExterna\ Debug/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:MedindoEventos\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:MedindoEventos\ Debug/activeLaunchTarget=null\:---
-org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:alertaTemperatura\ Debug/activeLaunchMode=debug
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:alertaTemperatura\ Debug/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:alertaTemperatura\ Debug/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:display7segmentos\ Debug/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:gps\ Debug/activeLaunchMode=run

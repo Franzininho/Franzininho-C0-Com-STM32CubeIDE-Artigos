@@ -76,7 +76,7 @@ void transmitir_temperatura();
 float calcular_temperatura(){
 	float ntc_resistance;
 	/* calcula resistencia NTC */
-	ntc_resistance = ((resistor)/((4095.0f/leitura) - 1.0f));
+	ntc_resistance = ((resistor)/((4095.0f/leitura)));
 	/* Calcula temperatura usando equacao Steinhart-Hart  */
 	float ntc_ln = log(ntc_resistance);
 	temperatura = (1.0f / (A + B * ntc_ln + C * (ntc_ln * ntc_ln * ntc_ln))) - 273.15f;

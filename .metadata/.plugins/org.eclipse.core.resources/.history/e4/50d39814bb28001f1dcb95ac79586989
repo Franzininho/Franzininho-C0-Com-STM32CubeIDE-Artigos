@@ -79,7 +79,7 @@ float calcular_temperatura(){
 	ntc_resistance = ((resistor)/((4095.0f/leitura) - 1.0f));
 	/* Calcula temperatura usando equacao Steinhart-Hart  */
 	float ntc_ln = log(ntc_resistance);
-	temperatura = (1.0f / (A + B * ntc_ln + C * (ntc_ln * ntc_ln * ntc_ln))) - 273.15f;
+	temperatura = (1.0f / (A + B * ntc_ln + C * ntc_ln * ntc_ln * ntc_ln)) - 273.15f;
 	return temperatura;
 }
 

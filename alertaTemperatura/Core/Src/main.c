@@ -51,10 +51,10 @@ UART_HandleTypeDef huart1;
 /* resistencia resistor serie */
 #define resistor 10000.0f
 
-/* contantes equacao Steinhart-Hart - valores disponiveis datasheet */
-#define A 0.0011384f
-#define B 0.00023245f
-#define C 0.00000009489f
+/* contantes equacao Steinhart-Hart  */
+#define A 0.001125308852122f
+#define B 0.000234711863267f
+#define C 0.000000085663516f
 
 uint32_t leitura;
 float temperatura;
@@ -91,8 +91,8 @@ void controlar_leds_e_buzzer() {
         // Desligar outros LEDs
         HAL_GPIO_WritePin(GREEN_GPIO_Port, GREEN_Pin, GPIO_PIN_RESET);
         HAL_GPIO_WritePin(RED_GPIO_Port, RED_Pin, GPIO_PIN_RESET);
-        // Ligar buzzer
-        HAL_GPIO_WritePin(BUZZER_GPIO_Port, BUZZER_Pin, GPIO_PIN_SET);
+        // Desligar buzzer
+        HAL_GPIO_WritePin(BUZZER_GPIO_Port, BUZZER_Pin, GPIO_PIN_RESET);
     } else if (temperatura > 15 && temperatura <= 30) {
         // Ligar LED verde
         HAL_GPIO_WritePin(GREEN_GPIO_Port, GREEN_Pin, GPIO_PIN_SET);
@@ -175,11 +175,11 @@ int main(void)
 	leitura = HAL_ADC_GetValue (&hadc1); //  armazenar o valor lido pelo ADC
 	HAL_ADC_Stop(&hadc1);
 	// Calcula a temperatura
-	temperatura = calcular_temperatura(leitura);
+	temperatura = calcular_temperatura();
 	// Controla os LEDs e o buzzer baseado na temperatura
-	controlar_leds_e_buzzer(temperatura);
+	controlar_leds_e_buzzer();
 	// Transmite a temperatura via UART
-	transmitir_temperatura(temperatura);
+	transmitir_temperatura();
 
   }
   /* USER CODE END 3 */

@@ -19,39 +19,15 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 
-/* Private includes ----------------------------------------------------------*/
-/* USER CODE BEGIN Includes */
-
-/* USER CODE END Includes */
-
-/* Private typedef -----------------------------------------------------------*/
-/* USER CODE BEGIN PTD */
-
-/* USER CODE END PTD */
-
-/* Private define ------------------------------------------------------------*/
-/* USER CODE BEGIN PD */
-
-/* USER CODE END PD */
-
-/* Private macro -------------------------------------------------------------*/
-/* USER CODE BEGIN PM */
-
-/* USER CODE END PM */
-
 /* Private variables ---------------------------------------------------------*/
 ADC_HandleTypeDef hadc1;
-
-/* USER CODE BEGIN PV */
-
-/* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_ADC1_Init(void);
 /* USER CODE BEGIN PFP */
-
+void desligaLeds();
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -68,10 +44,10 @@ void desligaLeds(){
 	HAL_GPIO_WritePin(GPIOB, LED_NOVE_Pin, GPIO_PIN_RESET);
 	HAL_GPIO_WritePin(GPIOB, LED_DEZ_Pin, GPIO_PIN_RESET);
 }
+
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc) {
   uint32_t leituraPotenciometro = HAL_ADC_GetValue(&hadc1);
   int ledCount = leituraPotenciometro * 10 / 4095; // 10 LEDs e 2^12-1
-  HAL_ADC_Stop_IT(&hadc1);
   desligaLeds();
   if(ledCount >= 1) HAL_GPIO_WritePin(GPIOA, LED_UM_Pin, GPIO_PIN_SET);
   if(ledCount >= 2) HAL_GPIO_WritePin(GPIOA, LED_DOIS_Pin, GPIO_PIN_SET);
@@ -92,34 +68,17 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc) {
   */
 int main(void)
 {
-
-  /* USER CODE BEGIN 1 */
-
-  /* USER CODE END 1 */
-
   /* MCU Configuration--------------------------------------------------------*/
-
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
-
-  /* USER CODE BEGIN Init */
-
-  /* USER CODE END Init */
-
   /* Configure the system clock */
   SystemClock_Config();
-
-  /* USER CODE BEGIN SysInit */
-
-  /* USER CODE END SysInit */
-
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_ADC1_Init();
   /* USER CODE BEGIN 2 */
   HAL_ADCEx_Calibration_Start(&hadc1); // Rotina de calibração do ADC
   /* USER CODE END 2 */
-
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)

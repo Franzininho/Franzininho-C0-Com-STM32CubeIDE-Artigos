@@ -1,4 +1,4 @@
-11:18:36 **** Incremental Build of configuration Debug for project Bargraph ****
+10:45:23 **** Incremental Build of configuration Debug for project Bargraph ****
 make -j4 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "Bargraph.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\Bargraph\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Bargraph.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
@@ -7,11 +7,11 @@ Finished building target: Bargraph.elf
 arm-none-eabi-size  Bargraph.elf 
 arm-none-eabi-objdump -h -S Bargraph.elf  > "Bargraph.list"
    text	   data	    bss	    dec	    hex	filename
-  10732	     12	   1668	  12412	   307c	Bargraph.elf
+  10428	     12	   1668	  12108	   2f4c	Bargraph.elf
 Finished building: default.size.stdout
  
 Finished building: Bargraph.list
  
 
-11:18:38 Build Finished. 0 errors, 0 warnings. (took 2s.384ms)
+10:45:28 Build Finished. 0 errors, 0 warnings. (took 4s.799ms)
 

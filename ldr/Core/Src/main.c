@@ -24,21 +24,6 @@
 
 /* USER CODE END Includes */
 
-/* Private typedef -----------------------------------------------------------*/
-/* USER CODE BEGIN PTD */
-
-/* USER CODE END PTD */
-
-/* Private define ------------------------------------------------------------*/
-/* USER CODE BEGIN PD */
-
-/* USER CODE END PD */
-
-/* Private macro -------------------------------------------------------------*/
-/* USER CODE BEGIN PM */
-
-/* USER CODE END PM */
-
 /* Private variables ---------------------------------------------------------*/
 ADC_HandleTypeDef hadc1;
 
@@ -82,15 +67,14 @@ int main(void)
 
   while (1)
   {
+	// leitura ADC pelo meotod polling
     HAL_ADC_Start(&hadc1);
     if (HAL_ADC_PollForConversion(&hadc1, 1000) == HAL_OK) {
       leitura = HAL_ADC_GetValue(&hadc1);
     }
     HAL_ADC_Stop(&hadc1);
-
     // Inverte a lógica: quanto maior a leitura do ADC (mais luz), maior o PWM
     pwm = 1000 - ((leitura * 1000) / 4095);
-
     // Atualiza a intensidade do LED
     __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_3, pwm);
   }

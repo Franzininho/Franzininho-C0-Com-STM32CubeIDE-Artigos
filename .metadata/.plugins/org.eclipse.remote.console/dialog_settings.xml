@@ -2,7 +2,7 @@
 <section name="Workbench">
 	<section name="org.eclipse.remote.internal.console.TerminalConsoleSettingsDialog">
 		<item key="connectionType" value="org.eclipse.remote.serial.core.connectionType"/>
-		<item key="connectionName" value="Serial Port"/>
+		<item key="connectionName" value="Serial Port 2"/>
 		<item key="encoding" value="windows-1252"/>
 	</section>
 </section>

@@ -1,0 +1,15 @@
+../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rtc_ex.c:122:19:HAL_RTCEx_SetTimeStamp	2
+../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rtc_ex.c:179:19:HAL_RTCEx_SetTimeStamp_IT	2
+../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rtc_ex.c:227:19:HAL_RTCEx_DeactivateTimeStamp	2
+../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rtc_ex.c:270:19:HAL_RTCEx_GetTimeStamp	2
+../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rtc_ex.c:320:13:HAL_RTCEx_TimeStampEventCallback	1
+../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rtc_ex.c:336:6:HAL_RTCEx_TimeStampIRQHandler	2
+../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rtc_ex.c:364:19:HAL_RTCEx_PollForTimeStampEvent	7
+../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rtc_ex.c:448:19:HAL_RTCEx_SetSmoothCalib	5
+../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rtc_ex.c:522:19:HAL_RTCEx_SetSynchroShift	8
+../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rtc_ex.c:624:19:HAL_RTCEx_SetCalibrationOutPut	2
+../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rtc_ex.c:662:19:HAL_RTCEx_DeactivateCalibrationOutPut	2
+../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rtc_ex.c:691:19:HAL_RTCEx_SetRefClock	4
+../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rtc_ex.c:733:19:HAL_RTCEx_DeactivateRefClock	4
+../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rtc_ex.c:777:19:HAL_RTCEx_EnableBypassShadow	2
+../Drivers/STM32C0xx_HAL_Driver/Src/stm32c0xx_hal_rtc_ex.c:809:19:HAL_RTCEx_DisableBypassShadow	2

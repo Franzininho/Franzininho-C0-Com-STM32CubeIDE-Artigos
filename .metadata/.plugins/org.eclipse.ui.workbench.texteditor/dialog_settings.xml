@@ -6,7 +6,10 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
+		<item key="selection" value="V_AT_25C"/>
 		<list key="findhistory">
+			<item value="V_AT_30"/>
+			<item value="V_AT_30C"/>
 			<item value="hi2c1"/>
 		</list>
 		<list key="replacehistory">

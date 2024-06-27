@@ -21,87 +21,41 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
 #include "stdio.h"
 #include "string.h"
-
 uint8_t dia, mes, ano, horas, segundos, minutos;
 char uart_tx_buffer[50];
+
 /* USER CODE END Includes */
-
-/* Private typedef -----------------------------------------------------------*/
-/* USER CODE BEGIN PTD */
-
-/* USER CODE END PTD */
-
-/* Private define ------------------------------------------------------------*/
-/* USER CODE BEGIN PD */
-
-/* USER CODE END PD */
-
-/* Private macro -------------------------------------------------------------*/
-/* USER CODE BEGIN PM */
-
-/* USER CODE END PM */
-
 /* Private variables ---------------------------------------------------------*/
-
 RTC_HandleTypeDef hrtc;
-
 UART_HandleTypeDef huart1;
 
 /* USER CODE BEGIN PV */
 RTC_DateTypeDef data;
 RTC_TimeTypeDef tempo;
 /* USER CODE END PV */
-
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_RTC_Init(void);
 static void MX_USART1_UART_Init(void);
-/* USER CODE BEGIN PFP */
-
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-
-/* USER CODE END 0 */
-
 /**
   * @brief  The application entry point.
   * @retval int
   */
 int main(void)
 {
-
-  /* USER CODE BEGIN 1 */
-
-  /* USER CODE END 1 */
-
   /* MCU Configuration--------------------------------------------------------*/
-
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
-
-  /* USER CODE BEGIN Init */
-
-  /* USER CODE END Init */
-
   /* Configure the system clock */
   SystemClock_Config();
-
-  /* USER CODE BEGIN SysInit */
-
-  /* USER CODE END SysInit */
-
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_RTC_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-
   /* Ajuste a data e a hora aqui */
    data.Year = 24;  // 2024
    data.Month = RTC_MONTH_JUNE;
@@ -112,15 +66,12 @@ int main(void)
    tempo.Seconds = 0;
    HAL_RTC_SetDate(&hrtc, &data, RTC_FORMAT_BIN);
    HAL_RTC_SetTime(&hrtc, &tempo, RTC_FORMAT_BIN);
-
   /* USER CODE END 2 */
-
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
     /* USER CODE END WHILE */
-
     /* USER CODE BEGIN 3 */
 	HAL_RTC_GetDate(&hrtc, &data, RTC_FORMAT_BIN);
 	HAL_RTC_GetTime(&hrtc, &tempo, RTC_FORMAT_BIN);
@@ -133,8 +84,6 @@ int main(void)
 	ano = data.Year;
 	sprintf(uart_tx_buffer, "Data: %02d/%02d/%04d Tempo: %02d:%02d:%02d\r\n", dia, mes, 2000+ano, horas, minutos, segundos);
 	HAL_UART_Transmit(&huart1, (uint8_t *)uart_tx_buffer, strlen(uart_tx_buffer), 1000);
-	HAL_Delay(1000);
-
   }
   /* USER CODE END 3 */
 }

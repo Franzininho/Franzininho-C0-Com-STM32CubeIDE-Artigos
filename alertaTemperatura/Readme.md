@@ -1,7 +1,5 @@
 # Medindo temperatura com NTC e Franzinho C0
 
-### README: Temperature Monitoring System
-
 #### Descrição
 Este código implementa um sistema de monitoramento de temperatura utilizando um termistor NTC (Negative Temperature Coefficient) e uma equação de Steinhart-Hart para calcular a temperatura em graus Celsius. A temperatura medida é exibida através de LEDs coloridos (azul, verde e vermelho) e também transmitida via comunicação UART.
 

@@ -1,0 +1,10 @@
+../Core/Src/bmp180_for_stm32_hal.c:26:6:BMP180_Init	1
+../Core/Src/bmp180_for_stm32_hal.c:35:6:BMP180_SetOversampling	1
+../Core/Src/bmp180_for_stm32_hal.c:43:6:BMP180_UpdateCalibrationData	1
+../Core/Src/bmp180_for_stm32_hal.c:62:6:BMP180_WriteReg	1
+../Core/Src/bmp180_for_stm32_hal.c:72:9:BMP180_ReadReg	1
+../Core/Src/bmp180_for_stm32_hal.c:83:9:BMP180_GetRawTemperature	3
+../Core/Src/bmp180_for_stm32_hal.c:97:7:BMP180_GetTemperature	1
+../Core/Src/bmp180_for_stm32_hal.c:106:9:BMP180_GetPressure	16
+../Core/Src/bmp180_for_stm32_hal.c:138:9:BMP180_GetUT	1
+../Core/Src/bmp180_for_stm32_hal.c:142:9:BMP180_GetUP	1

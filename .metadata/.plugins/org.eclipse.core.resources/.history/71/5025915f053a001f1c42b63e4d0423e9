@@ -64,17 +64,16 @@ int calcularPressaoNivelMar(int pressaoAtual, int altitude, int temperaturaAtual
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+/* Function to calculate sea level pressure */
 int calcularPressaoNivelMar(int pressaoAtual, int altitude, int temperaturaAtual)
 {
-    double pressaoNivelMar;
-    double temperaturaKelvin = temperaturaAtual / 10.0 + 273.15; // Converter temperatura para Kelvin
-    double altitudeMetros = altitude; // Altitude em metros
-    double altitudeKm = altitudeMetros / 1000.0; // Converter altitude para quilômetros
+  double pressaoNivelMar;
+  double temperaturaKelvin = temperaturaAtual / 10.0 + 273.15;
+  double altitudeKm = altitude / 1000.0;
 
-    // Calcular a pressão ao nível do mar usando a fórmula
-    pressaoNivelMar = pressaoAtual * pow(1.0 - (0.0065 * altitudeMetros) / (temperaturaKelvin + 0.0065 * altitudeMetros), -5.257);
+  pressaoNivelMar = pressaoAtual * pow(1.0 - (0.0065 * altitudeKm) / (temperaturaKelvin + 0.0065 * altitudeKm), -5.257);
 
-    return (int)pressaoNivelMar; // Retornar o valor como inteiro
+  return (int)pressaoNivelMar;
 }
 /* USER CODE END 0 */
 
@@ -124,7 +123,7 @@ int main(void)
 	int32_t temperatura = BMP180_GetRawTemperature();
 	int32_t pressao = BMP180_GetPressure();
 	// Calcular pressão ao nível do mar
-    int pressaoNivelMar = calcularPressaoNivelMar(pressao, 719, temperatura); // altitude de 719 metros
+	int pressaoNivelMar = calcularPressaoNivelMar(pressao / 100, 719, temperatura);
 	char buffer[100];
     sprintf(buffer, "Temperatura: %d.%dC\r\nPressao: %d Pa\r\nPressao ao nivel do mar: %d hPa\r\n", (int)temperatura / 10, (int)temperatura % 10, (int)pressao, pressaoNivelMar / 100);
 	HAL_UART_Transmit(&huart1, (uint8_t *)buffer, strlen(buffer), 1000);

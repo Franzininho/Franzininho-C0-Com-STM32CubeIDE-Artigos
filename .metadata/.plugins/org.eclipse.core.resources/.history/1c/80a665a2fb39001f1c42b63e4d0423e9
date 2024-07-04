@@ -25,7 +25,6 @@
 #include "stdio.h"
 #include "stdlib.h"
 #include "string.h"
-#include "math.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -59,23 +58,12 @@ static void MX_GPIO_Init(void);
 static void MX_I2C1_Init(void);
 static void MX_USART1_UART_Init(void);
 /* USER CODE BEGIN PFP */
-int calcularPressaoNivelMar(int pressaoAtual, int altitude, int temperaturaAtual);
+
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-int calcularPressaoNivelMar(int pressaoAtual, int altitude, int temperaturaAtual)
-{
-    double pressaoNivelMar;
-    double temperaturaKelvin = temperaturaAtual / 10.0 + 273.15; // Converter temperatura para Kelvin
-    double altitudeMetros = altitude; // Altitude em metros
-    double altitudeKm = altitudeMetros / 1000.0; // Converter altitude para quilômetros
 
-    // Calcular a pressão ao nível do mar usando a fórmula
-    pressaoNivelMar = pressaoAtual * pow(1.0 - (0.0065 * altitudeMetros) / (temperaturaKelvin + 0.0065 * altitudeMetros), -5.257);
-
-    return (int)pressaoNivelMar; // Retornar o valor como inteiro
-}
 /* USER CODE END 0 */
 
 /**
@@ -111,7 +99,7 @@ int main(void)
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
   BMP180_Init(&hi2c1);
-  BMP180_SetOversampling(BMP180_STANDARD);
+  BMP180_SetOversampling(BMP180_ULTRA);
   BMP180_UpdateCalibrationData();
   /* USER CODE END 2 */
 
@@ -123,10 +111,8 @@ int main(void)
     /* USER CODE BEGIN 3 */
 	int32_t temperatura = BMP180_GetRawTemperature();
 	int32_t pressao = BMP180_GetPressure();
-	// Calcular pressão ao nível do mar
-    int pressaoNivelMar = calcularPressaoNivelMar(pressao, 719, temperatura); // altitude de 719 metros
 	char buffer[100];
-    sprintf(buffer, "Temperatura: %d.%dC\r\nPressao: %d Pa\r\nPressao ao nivel do mar: %d hPa\r\n", (int)temperatura / 10, (int)temperatura % 10, (int)pressao, pressaoNivelMar / 100);
+	sprintf(buffer, "Temperatura: %d.%dC\r\nPressao: %d Pa\r\n", (int) temperatura/10, (int)temperatura%10, (int)pressao);
 	HAL_UART_Transmit(&huart1, (uint8_t *)buffer, strlen(buffer), 1000);
 	HAL_Delay(1000);
   }

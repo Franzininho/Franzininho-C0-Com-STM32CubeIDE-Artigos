@@ -1,0 +1,127 @@
+#include "stm32c0xx_hal.h"
+#include "bmp180_for_stm32_hal.h"
+#include "math.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+extern I2C_HandleTypeDef hi2c1;
+#define BMP_180_ADD        0x77
+#define EEPROM_START_ADD   0xAA
+
+short AC1, AC2, AC3, B1, B2, MB, MC, MD;
+unsigned short AC4, AC5, AC6;
+long UT, UP;
+uint8_t data_tem[2], data_pres[3];
+
+long X1 = 0;
+long X2 = 0;
+long X3 = 0;
+long B3 = 0;
+long B5 = 0;
+unsigned long B4 = 0;
+long B6 = 0;
+unsigned long B7 = 0;
+long Press = 0;
+
+typedef struct {
+    int32_t temperature;
+    int32_t pressure;
+} BMP180Sensor_t;
+
+BMP180Sensor_t BMP180;
+
+
+void i2c_writeByte(uint8_t saddr, uint8_t maddr, uint8_t data) {
+    uint8_t buffer[2] = {maddr, data};
+    HAL_I2C_Master_Transmit(&hi2c1, saddr << 1, buffer, 2, HAL_MAX_DELAY);
+}
+
+void i2c_ReadMulti(uint8_t saddr, uint8_t maddr, uint8_t n, uint8_t* data) {
+    HAL_I2C_Master_Transmit(&hi2c1, saddr << 1, &maddr, 1, HAL_MAX_DELAY);
+    HAL_I2C_Master_Receive(&hi2c1, saddr << 1, data, n, HAL_MAX_DELAY);
+}
+
+void BMP180_init() {
+    uint8_t eeprom_data[22];
+    i2c_ReadMulti(BMP_180_ADD, EEPROM_START_ADD, 22, eeprom_data);
+    AC1 = (eeprom_data[0] << 8) + eeprom_data[1];
+    AC2 = (eeprom_data[2] << 8) + eeprom_data[3];
+    AC3 = (eeprom_data[4] << 8) + eeprom_data[5];
+    AC4 = (eeprom_data[6] << 8) + eeprom_data[7];
+    AC5 = (eeprom_data[8] << 8) + eeprom_data[9];
+    AC6 = (eeprom_data[10] << 8) + eeprom_data[11];
+    B1 = (eeprom_data[12] << 8) + eeprom_data[13];
+    B2 = (eeprom_data[14] << 8) + eeprom_data[15];
+    MB = (eeprom_data[16] << 8) + eeprom_data[17];
+    MC = (eeprom_data[18] << 8) + eeprom_data[19];
+    MD = (eeprom_data[20] << 8) + eeprom_data[21];
+}
+
+void update_BMP180(OSS oss) {
+    // Update temperature
+    i2c_writeByte(BMP_180_ADD, 0xF4, 0x2E);
+    HAL_Delay(5);  // Wait for measurement to complete
+    i2c_ReadMulti(BMP_180_ADD, 0xF6, 2, data_tem);
+    UT = (data_tem[0] << 8) + data_tem[1];
+
+    // Update pressure
+    uint8_t oss_val;
+    switch (oss) {
+        case OSS0: oss_val = 0; break;
+        case OSS1: oss_val = 1; break;
+        case OSS2: oss_val = 2; break;
+        case OSS3: oss_val = 3; break;
+    }
+
+    i2c_writeByte(BMP_180_ADD, 0xF4, 0x34 + (oss_val << 6));
+    switch (oss) {
+        case OSS0: HAL_Delay(5); break;
+        case OSS1: HAL_Delay(8); break;
+        case OSS2: HAL_Delay(14); break;
+        case OSS3: HAL_Delay(26); break;
+    }
+    i2c_ReadMulti(BMP_180_ADD, 0xF6, 3, data_pres);
+    UP = ((data_pres[0] << 16) + (data_pres[1] << 8) + data_pres[2]) >> (8 - oss_val);
+
+    // Calculate temperature
+    long x1 = ((UT - AC6) * AC5) / pow(2, 15);
+    long x2 = (MC * pow(2, 11)) / (x1 + MD);
+    B5 = x1 + x2;
+    BMP180.temperature = ((B5 + 8) / pow(2, 4)) / 10;
+
+    // Calculate pressure
+    B6 = B5 - 4000;
+    X1 = (B2 * (B6 * B6 / pow(2, 12))) / pow(2, 11);
+    X2 = AC2 * B6 / pow(2, 11);
+    X3 = X1 + X2;
+    B3 = (((AC1 * 4 + X3) << oss_val) + 2) / 4;
+    X1 = AC3 * B6 / pow(2, 13);
+    X2 = (B1 * (B6 * B6 / pow(2, 12))) / pow(2, 16);
+    X3 = ((X1 + X2) + 2) / pow(2, 2);
+    B4 = AC4 * (unsigned long)(X3 + 32768) / pow(2, 15);
+    B7 = ((unsigned long)UP - B3) * (50000 >> oss_val);
+    if (B7 < 0x80000000) {
+        Press = (B7 * 2) / B4;
+    } else {
+        Press = (B7 / B4) * 2;
+    }
+    X1 = (Press / pow(2, 8)) * (Press / pow(2, 8));
+    X1 = (X1 * 3038) / pow(2, 16);
+    X2 = (-7357 * Press) / pow(2, 16);
+    Press = Press + (X1 + X2 + 3791) / pow(2, 4);
+    BMP180.pressure = Press;
+}
+
+int32_t get_temperature(void) {
+    return BMP180.temperature;
+}
+
+int32_t get_pressure(void) {
+    return BMP180.pressure;
+}
+
+#ifdef __cplusplus
+}
+#endif

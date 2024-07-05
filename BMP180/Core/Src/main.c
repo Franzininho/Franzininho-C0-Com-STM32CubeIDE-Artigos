@@ -64,12 +64,10 @@ int calcularPressaoNivelMar(int pressaoAtual, int altitude, int temperaturaAtual
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-int calcularPressaoNivelMar(int pressaoAtual, int altitude, int temperaturaAtual)
+int calcularPressaoNivelMar(int pressaoAtual, int altitudeMetros, int temperaturaAtual)
 {
     double pressaoNivelMar;
     double temperaturaKelvin = temperaturaAtual / 10.0 + 273.15; // Converter temperatura para Kelvin
-    double altitudeMetros = altitude; // Altitude em metros
-    double altitudeKm = altitudeMetros / 1000.0; // Converter altitude para quilômetros
 
     // Calcular a pressão ao nível do mar usando a fórmula
     pressaoNivelMar = pressaoAtual * pow(1.0 - (0.0065 * altitudeMetros) / (temperaturaKelvin + 0.0065 * altitudeMetros), -5.257);
@@ -110,7 +108,8 @@ int main(void)
   MX_I2C1_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-  BMP180_Init(&hi2c1);
+  // Inicializa o BMP180
+  /* USER CODE BEGIN 2 */
   BMP180_SetOversampling(BMP180_STANDARD);
   BMP180_UpdateCalibrationData();
   /* USER CODE END 2 */
@@ -130,6 +129,7 @@ int main(void)
 	HAL_UART_Transmit(&huart1, (uint8_t *)buffer, strlen(buffer), 1000);
 	HAL_Delay(1000);
   }
+
   /* USER CODE END 3 */
 }
 
@@ -185,7 +185,7 @@ static void MX_I2C1_Init(void)
 
   /* USER CODE END I2C1_Init 1 */
   hi2c1.Instance = I2C1;
-  hi2c1.Init.Timing = 0x20303E5D;
+  hi2c1.Init.Timing = 0x2010091A;
   hi2c1.Init.OwnAddress1 = 0;
   hi2c1.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;
   hi2c1.Init.DualAddressMode = I2C_DUALADDRESS_DISABLE;
@@ -198,19 +198,6 @@ static void MX_I2C1_Init(void)
     Error_Handler();
   }
 
-  /** Configure Analogue filter
-  */
-  if (HAL_I2CEx_ConfigAnalogFilter(&hi2c1, I2C_ANALOGFILTER_ENABLE) != HAL_OK)
-  {
-    Error_Handler();
-  }
-
-  /** Configure Digital filter
-  */
-  if (HAL_I2CEx_ConfigDigitalFilter(&hi2c1, 0) != HAL_OK)
-  {
-    Error_Handler();
-  }
   /* USER CODE BEGIN I2C1_Init 2 */
 
   /* USER CODE END I2C1_Init 2 */

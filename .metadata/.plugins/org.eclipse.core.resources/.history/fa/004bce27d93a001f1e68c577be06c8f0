@@ -1,0 +1,106 @@
+#include "main.h"
+#include "stm32c0xx_hal.h"
+#include "bmp180_for_stm32_hal.h"
+#include "math.h"
+
+#ifdef __cplusplus
+extern "C"{
+#endif
+
+extern I2C_HandleTypeDef hi2c1; // Certifique-se de que o handle I2C está corretamente declarado e inicializado
+
+#define BMP180_I2C_ADDR 0x77
+#define BMP180_I2C_TIMEOUT 1000
+
+
+uint8_t eeprom_data[22];
+uint8_t data_tem[2];
+uint8_t data_pres[3];
+int16_t AC1, AC2, AC3, B1, B2, MB, MC, MD;
+uint16_t AC4, AC5, AC6;
+int32_t UT, UP;
+int32_t B5, B6, X1, X2, X3, B3, B4, B7, Press;
+int32_t temperature, pressure;
+
+void BMP180_WriteReg(uint8_t reg, uint8_t cmd) {
+    uint8_t arr[2] = { reg, cmd };
+    HAL_I2C_Master_Transmit(&hi2c1, BMP180_I2C_ADDR << 1, arr, 2, BMP180_I2C_TIMEOUT);
+}
+
+void BMP180_ReadMulti(uint8_t reg, uint8_t *data, uint8_t length) {
+    HAL_I2C_Master_Transmit(&hi2c1, BMP180_I2C_ADDR, &reg, 1, BMP180_I2C_TIMEOUT);
+    HAL_I2C_Master_Receive(&hi2c1, BMP180_I2C_ADDR << 1, data, length, BMP180_I2C_TIMEOUT);
+}
+
+void BMP180_init() {
+    BMP180_ReadMulti(0xAA, eeprom_data, 22);
+    AC1 = (eeprom_data[0] << 8) + eeprom_data[1];
+    AC2 = (eeprom_data[2] << 8) + eeprom_data[3];
+    AC3 = (eeprom_data[4] << 8) + eeprom_data[5];
+    AC4 = (eeprom_data[6] << 8) + eeprom_data[7];
+    AC5 = (eeprom_data[8] << 8) + eeprom_data[9];
+    AC6 = (eeprom_data[10] << 8) + eeprom_data[11];
+    B1 = (eeprom_data[12] << 8) + eeprom_data[13];
+    B2 = (eeprom_data[14] << 8) + eeprom_data[15];
+    MB = (eeprom_data[16] << 8) + eeprom_data[17];
+    MC = (eeprom_data[18] << 8) + eeprom_data[19];
+    MD = (eeprom_data[20] << 8) + eeprom_data[21];
+}
+
+void update_BMP180(uint8_t OSS) {
+    // Update temperature
+    BMP180_WriteReg(0xF4, 0x2E);
+    HAL_Delay(5);
+    BMP180_ReadMulti(0xF6, data_tem, 2);
+    UT = (data_tem[0] << 8) + data_tem[1];
+
+    // Update pressure
+    BMP180_WriteReg(0xF4, 0x34 + (OSS << 6));
+    switch (OSS) {
+        case 0: HAL_Delay(5); break;
+        case 1: HAL_Delay(8); break;
+        case 2: HAL_Delay(14); break;
+        case 3: HAL_Delay(26); break;
+    }
+    BMP180_ReadMulti(0xF6, data_pres, 3);
+    UP = ((data_pres[0] << 16) + (data_pres[1] << 8) + data_pres[2]) >> (8 - OSS);
+
+    // Calculate temperature
+    int32_t X1 = (UT - AC6) * AC5 / (1 << 15);
+    int32_t X2 = MC * (1 << 11) / (X1 + MD);
+    B5 = X1 + X2;
+    temperature = ((B5 + 8) / (1 << 4)) / 10.0;
+
+    // Calculate pressure
+    B6 = B5 - 4000;
+    X1 = (B2 * (B6 * B6 / (1 << 12))) / (1 << 11);
+    X2 = AC2 * B6 / (1 << 11);
+    X3 = X1 + X2;
+    B3 = (((AC1 * 4 + X3) << OSS) + 2) / 4;
+    X1 = AC3 * B6 / (1 << 13);
+    X2 = (B1 * (B6 * B6 / (1 << 12))) / (1 << 16);
+    X3 = ((X1 + X2) + 2) / (1 << 2);
+    B4 = AC4 * (uint32_t)(X3 + 32768) / (1 << 15);
+    B7 = ((uint32_t)UP - B3) * (50000 >> OSS);
+    if (B7 < 0x80000000) {
+        Press = (B7 * 2) / B4;
+    } else {
+        Press = (B7 / B4) * 2;
+    }
+    X1 = (Press / (1 << 8)) * (Press / (1 << 8));
+    X1 = (X1 * 3038) / (1 << 16);
+    X2 = (-7357 * Press) / (1 << 16);
+    Press = Press + (X1 + X2 + 3791) / (1 << 4);
+    pressure = Press / 100.0;
+}
+
+int32_t get_temperature(void){
+	return temperature;
+}
+int32_t get_pressure(void){
+	return pressure;
+}
+
+#ifdef __cplusplus
+}
+#endif

@@ -1,13 +1,10 @@
-/* An STM32 HAL library written for the BMP180 temperature/pressure sensor. */
-/* Libraries by @eepj www.github.com/eepj */
+#include "stm32c0xx_hal.h"
 #include "bmp180_for_stm32_hal.h"
-#include "main.h"
+#include "math.h"
 
-#ifdef __cplusplus
-extern "C"{
-#endif
+extern I2C_HandleTypeDef hi2c1;
+#define BMP180_I2C &hi2c1
 
-I2C_HandleTypeDef *_bmp180_ui2c;
 BMP180_EEPROM _bmp180_eeprom;
 BMP180_OSS _bmp180_oss;
 
@@ -18,14 +15,6 @@ const uint8_t BMP180_CMD_TEMP = 0x2e;
 const uint8_t BMP180_DELAY_TEMP = 5;
 const uint8_t BMP180_CMD_PRES[4] = { 0x34, 0x74, 0xb4, 0xf4 };
 const uint8_t BMP180_DELAY_PRES[4] = { 5, 8, 14, 26 };
-
-/**
- * @brief Initializes the BMP180 temperature/pressure sensor.
- * @param hi2c User I2C handle pointer.
- */
-void BMP180_Init(I2C_HandleTypeDef *hi2c) {
-	_bmp180_ui2c = hi2c;
-}
 
 /**
  * @param oss Enum, oversampling setting.
@@ -61,7 +50,7 @@ void BMP180_UpdateCalibrationData(void) {
  */
 void BMP180_WriteReg(uint8_t reg, uint8_t cmd) {
 	uint8_t arr[2] = { reg, cmd };
-	HAL_I2C_Master_Transmit(_bmp180_ui2c, BMP180_I2C_ADDR << 1, arr, 2, BMP180_I2C_TIMEOUT);
+	HAL_I2C_Master_Transmit(BMP180_I2C, BMP180_I2C_ADDR, arr, 2, BMP180_I2C_TIMEOUT);
 }
 
 /**
@@ -70,9 +59,9 @@ void BMP180_WriteReg(uint8_t reg, uint8_t cmd) {
  * @return Byte read.
  */
 uint8_t BMP180_ReadReg(uint8_t reg) {
-	HAL_I2C_Master_Transmit(_bmp180_ui2c, BMP180_I2C_ADDR << 1, &reg, 1, BMP180_I2C_TIMEOUT);
+	HAL_I2C_Master_Transmit(BMP180_I2C, BMP180_I2C_ADDR, &reg, 1, BMP180_I2C_TIMEOUT);
 	uint8_t result;
-	HAL_I2C_Master_Receive(_bmp180_ui2c, BMP180_I2C_ADDR << 1, &result, 1, BMP180_I2C_TIMEOUT);
+	HAL_I2C_Master_Receive(BMP180_I2C, BMP180_I2C_ADDR, &result, 1, BMP180_I2C_TIMEOUT);
 	return result;
 }
 
@@ -83,7 +72,7 @@ uint8_t BMP180_ReadReg(uint8_t reg) {
 int32_t BMP180_GetRawTemperature(void) {
 	BMP180_WriteReg(BMP180_CONTROL_REG, BMP180_CMD_TEMP);
 	HAL_Delay(BMP180_DELAY_TEMP);
-	int32_t ut = BMP180_GetUT();
+	int32_t ut = Get_UTemp();
 	int32_t x1 = (ut - _bmp180_eeprom.BMP180_AC6) * _bmp180_eeprom.BMP180_AC5 / (1 << 15);
 	int32_t x2 = (_bmp180_eeprom.BMP180_MC * (1 << 11)) / (x1 + _bmp180_eeprom.BMP180_MD);
 	int32_t b5 = x1 + x2;
@@ -106,10 +95,10 @@ float BMP180_GetTemperature(void) {
 int32_t BMP180_GetPressure(void) {
 	BMP180_WriteReg(BMP180_CONTROL_REG, BMP180_CMD_TEMP);
 	HAL_Delay(BMP180_DELAY_TEMP);
-	int32_t ut = BMP180_GetUT();
+	int32_t ut = Get_UTemp();
 	BMP180_WriteReg(BMP180_CONTROL_REG, BMP180_CMD_PRES[_bmp180_oss]);
 	HAL_Delay(BMP180_DELAY_PRES[_bmp180_oss]);
-	int32_t up = BMP180_GetUP();
+	int32_t up = Get_UPress(1);
 	int32_t x1 = (ut - _bmp180_eeprom.BMP180_AC6) * _bmp180_eeprom.BMP180_AC5 / (1 << 15);
 	int32_t x2 = (_bmp180_eeprom.BMP180_MC * (1 << 11)) / (x1 + _bmp180_eeprom.BMP180_MD);
 	int32_t b5 = x1 + x2;
@@ -135,14 +124,37 @@ int32_t BMP180_GetPressure(void) {
 	return p;
 }
 
-int32_t BMP180_GetUT(void){
-	return (BMP180_ReadReg(BMP180_MSB_REG) << 8) | BMP180_ReadReg(BMP180_LSB_REG);
+uint32_t Get_UPress (int oss)   // oversampling setting 0,1,2,3
+{
+	uint8_t datatowrite = 0x34+(oss<<6);
+	uint8_t Press_RAW[3] = {0};
+	HAL_I2C_Mem_Write(BMP180_I2C, BMP180_I2C_ADDR, 0xF4, 1, &datatowrite, 1, 1000);
+	switch (oss)
+	{
+		case (0):
+			HAL_Delay (5);
+			break;
+		case (1):
+			HAL_Delay (8);
+			break;
+		case (2):
+			HAL_Delay (14);
+			break;
+		case (3):
+			HAL_Delay (26);
+			break;
+	}
+	HAL_I2C_Mem_Read(BMP180_I2C, BMP180_I2C_ADDR, 0xF6, 1, Press_RAW, 3, 1000);
+	return (((Press_RAW[0]<<16)+(Press_RAW[1]<<8)+Press_RAW[2]) >> (8-oss));
 }
 
-int32_t BMP180_GetUP(void){
-	return ((BMP180_ReadReg(BMP180_MSB_REG) << 16) | (BMP180_ReadReg(BMP180_LSB_REG) << 8) | BMP180_ReadReg(BMP180_XLSB_REG)) >> (8 - _bmp180_oss);
+// Get uncompensated Temp
+uint16_t Get_UTemp (void)
+{
+	uint8_t datatowrite = 0x2E;
+	uint8_t Temp_RAW[2] = {0};
+	HAL_I2C_Mem_Write(BMP180_I2C, BMP180_I2C_ADDR, 0xF4, 1, &datatowrite, 1, 1000);
+	HAL_Delay (5);  // wait 4.5 ms
+	HAL_I2C_Mem_Read(BMP180_I2C, BMP180_I2C_ADDR, 0xF6, 1, Temp_RAW, 2, 1000);
+	return ((Temp_RAW[0]<<8) + Temp_RAW[1]);
 }
-
-#ifdef __cplusplus
-}
-#endif

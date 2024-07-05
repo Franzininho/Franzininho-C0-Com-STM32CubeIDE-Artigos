@@ -1,11 +1,9 @@
-/* An STM32 HAL library written for the BMP180 temperature/pressure sensor. */
-/* Library by @eepj www.github.com/eepj */
 #ifndef BMP180_FOR_STM32_HAL_H
 #define BMP180_FOR_STM32_HAL_H
 
-#include "main.h"
+#include "stm32c0xx_hal.h"
 
-#define BMP180_I2C_ADDR					0x77
+#define BMP180_I2C_ADDR					0xEE
 #define BMP180_I2C_TIMEOUT				1000
 #define BMP180_CONTROL_REG				0xf4
 #define BMP180_MSB_REG					0xf6
@@ -72,7 +70,7 @@ int32_t BMP180_GetPressure(void);
 
 float BMP180_GetTemperature(void);
 
-int32_t BMP180_GetUT(void);
-int32_t BMP180_GetUP(void);
-
+uint32_t Get_UPress (int oss);   // oversampling setting 0,1,2,3
+uint16_t Get_UTemp (void);
 #endif
+

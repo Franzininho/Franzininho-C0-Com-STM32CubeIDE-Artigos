@@ -1,0 +1,12 @@
+#ifndef BMP180_FOR_STM32_HAL_H
+#define BMP180_FOR_STM32_HAL_H
+
+#include "stm32c0xx_hal.h"
+
+void BMP180_Start (void);
+float BMP180_GetTemp (void);
+float BMP180_GetPress (int oss);
+float BMP180_GetAlt (int oss);
+
+#endif
+

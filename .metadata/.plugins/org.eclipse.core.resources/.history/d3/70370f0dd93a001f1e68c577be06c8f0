@@ -1,0 +1,17 @@
+
+#ifndef BMP180_FOR_STM32_HAL_H
+#define BMP180_FOR_STM32_HAL_H
+
+#include "main.h"
+#include "stdio.h"
+
+
+void BMP180_WriteReg(uint8_t reg, uint8_t cmd);
+void BMP180_ReadMulti(uint8_t reg, uint8_t *data, uint8_t length);
+void BMP180_init();
+void update_BMP180(uint8_t  OSS);
+int32_t get_temperature(void);
+int32_t get_pressure(void);
+
+
+#endif

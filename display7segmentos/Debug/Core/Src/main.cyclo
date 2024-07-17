@@ -1,7 +1,0 @@
-../Core/Src/main.c:67:5:main	3
-../Core/Src/main.c:116:6:numero	1
-../Core/Src/main.c:126:6:atualizaDisplay	11
-../Core/Src/main.c:144:5:debounceBotao	4
-../Core/Src/main.c:164:6:SystemClock_Config	3
-../Core/Src/main.c:201:13:MX_GPIO_Init	1
-../Core/Src/main.c:242:6:Error_Handler	1

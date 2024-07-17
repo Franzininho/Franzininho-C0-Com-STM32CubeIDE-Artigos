@@ -1,9 +1,0 @@
-../Core/Src/main.c:76:7:calcular_temperatura	1
-../Core/Src/main.c:87:6:controlar_leds_e_buzzer	5
-../Core/Src/main.c:115:6:transmitir_temperatura	1
-../Core/Src/main.c:134:5:main	1
-../Core/Src/main.c:192:6:SystemClock_Config	3
-../Core/Src/main.c:229:13:MX_ADC1_Init	3
-../Core/Src/main.c:288:13:MX_USART1_UART_Init	5
-../Core/Src/main.c:336:13:MX_GPIO_Init	1
-../Core/Src/main.c:367:6:Error_Handler	1

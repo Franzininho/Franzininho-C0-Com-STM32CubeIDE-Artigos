@@ -1,8 +1,0 @@
-../Core/Src/main.c:68:6:dht11	10
-../Core/Src/main.c:145:6:Display_Data	1
-../Core/Src/main.c:174:5:main	1
-../Core/Src/main.c:224:6:SystemClock_Config	3
-../Core/Src/main.c:261:13:MX_I2C1_Init	4
-../Core/Src/main.c:309:13:MX_TIM3_Init	4
-../Core/Src/main.c:354:13:MX_GPIO_Init	1
-../Core/Src/main.c:387:6:Error_Handler	1

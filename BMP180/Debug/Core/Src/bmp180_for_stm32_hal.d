@@ -1,4 +1,5 @@
 Core/Src/bmp180_for_stm32_hal.o: ../Core/Src/bmp180_for_stm32_hal.c \
+ ../Core/Inc/bmp180_for_stm32_hal.h ../Core/Inc/main.h \
  ../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal.h \
  ../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_system.h \
  ../Drivers/CMSIS/Device/ST/STM32C0xx/Include/stm32c0xx.h \
@@ -29,7 +30,9 @@ Core/Src/bmp180_for_stm32_hal.o: ../Core/Src/bmp180_for_stm32_hal.c \
  ../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_pwr_ex.h \
  ../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_uart.h \
  ../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_uart_ex.h \
- ../Core/Inc/bmp180_for_stm32_hal.h
+ ../Core/Inc/main.h
+../Core/Inc/bmp180_for_stm32_hal.h:
+../Core/Inc/main.h:
 ../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal.h:
 ../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_ll_system.h:
 ../Drivers/CMSIS/Device/ST/STM32C0xx/Include/stm32c0xx.h:
@@ -60,4 +63,4 @@ Core/Src/bmp180_for_stm32_hal.o: ../Core/Src/bmp180_for_stm32_hal.c \
 ../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_pwr_ex.h:
 ../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_uart.h:
 ../Drivers/STM32C0xx_HAL_Driver/Inc/stm32c0xx_hal_uart_ex.h:
-../Core/Inc/bmp180_for_stm32_hal.h:
+../Core/Inc/main.h:

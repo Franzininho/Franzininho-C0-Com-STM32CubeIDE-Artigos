@@ -1,17 +1,10 @@
-13:04:24 **** Incremental Build of configuration Debug for project BMP180 ****
+10:38:56 **** Incremental Build of configuration Debug for project BMP180 ****
 make -j4 all 
-arm-none-eabi-gcc "../Core/Src/bmp180_for_stm32_hal.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/bmp180_for_stm32_hal.d" -MT"Core/Src/bmp180_for_stm32_hal.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/bmp180_for_stm32_hal.o"
-arm-none-eabi-gcc -o "BMP180.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\ProjetosFranzininho\BMP180\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="BMP180.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: BMP180.elf
- 
 arm-none-eabi-size  BMP180.elf 
-arm-none-eabi-objdump -h -S BMP180.elf  > "BMP180.list"
    text	   data	    bss	    dec	    hex	filename
-  29468	    112	   2160	  31740	   7bfc	BMP180.elf
+  15860	     92	   2164	  18116	   46c4	BMP180.elf
 Finished building: default.size.stdout
  
-Finished building: BMP180.list
- 
 
-13:04:30 Build Finished. 0 errors, 0 warnings. (took 5s.944ms)
+10:38:56 Build Finished. 0 errors, 0 warnings. (took 609ms)
 

@@ -13069,3 +13069,12 @@ java.io.IOException: Error waiting for read (5)
 	at org.eclipse.cdt.serial.SerialPort$1.read(SerialPort.java:108)
 	at java.base/java.io.InputStream.read(InputStream.java:218)
 	at org.eclipse.remote.internal.console.TerminalConsoleConnector$OutThread.run(TerminalConsoleConnector.java:58)
+
+!ENTRY org.eclipse.remote.console 4 4 2024-07-18 08:23:03.501
+!MESSAGE Error waiting for read (5)
+!STACK 0
+java.io.IOException: Error waiting for read (5)
+	at org.eclipse.cdt.serial.SerialPort.read1(Native Method)
+	at org.eclipse.cdt.serial.SerialPort$1.read(SerialPort.java:108)
+	at java.base/java.io.InputStream.read(InputStream.java:218)
+	at org.eclipse.remote.internal.console.TerminalConsoleConnector$OutThread.run(TerminalConsoleConnector.java:58)

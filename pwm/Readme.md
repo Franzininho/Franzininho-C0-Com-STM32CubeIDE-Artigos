@@ -20,15 +20,21 @@ Este projeto demonstra o controle de modulação por largura de pulso (PWM) de d
 
 ---
 
-#### Instalação
+#### Codigo pwm
 
-1. Clone ou baixe o repositório para sua máquina local.
-   
+```
+void atualiza_largura_puslo_LEDS(int start, int end, int step) {
+    for (int i = start; i != end; i += step) {
+        int LED1_pulse = i;
+        int LED2_pulse = 1000 - i;
 
-2. Abra o projeto no STM32CubeIDE.
+        __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_3, LED1_pulse); // (PB6, LED1)
+        __HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_4, LED2_pulse); // (PB7, LED2)
 
-3. Compile e carregue o projeto no microcontrolador STM32.
-
+        HAL_Delay(1);
+    }
+}
+```
 ---
 
 #### Uso

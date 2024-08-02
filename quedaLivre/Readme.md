@@ -1,8 +1,4 @@
-Claro, vou incluir um trecho de código no README para ilustrar como o driver é utilizado.
-
----
-
-# README - Driver LIS3DH com SPI
+# Driver identificar Queda Lire com LIS3DH com SPI
 
 Este projeto é um driver para o acelerômetro LIS3DH utilizando a interface SPI do microcontrolador STM32. O código configura o LIS3DH para detectar quedas livres e transmite uma mensagem via UART quando uma queda livre é detectada.
 

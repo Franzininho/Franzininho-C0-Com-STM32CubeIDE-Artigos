@@ -1,14 +1,14 @@
-11:29:03 **** Incremental Build of configuration Debug for project SPI ****
+11:40:06 **** Incremental Build of configuration Debug for project quedaLivre ****
 make -j4 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "SPI.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\Franzininho-C0-com-STM32CubeIDE-Artigos\SPI\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="SPI.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: SPI.elf
+arm-none-eabi-gcc "../Core/Src/lis3dh.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/lis3dh.d" -MT"Core/Src/lis3dh.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/lis3dh.o"
+arm-none-eabi-gcc -o "quedaLivre.elf" @"objects.list"   -mcpu=cortex-m0plus -T"C:\Users\User\STM32CubeIDE\workspace_1.15.1\Franzininho-C0-com-STM32CubeIDE-Artigos\quedaLivre\STM32C011F6PX_FLASH.ld" --specs=nosys.specs -Wl,-Map="quedaLivre.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: quedaLivre.elf
  
-arm-none-eabi-size  SPI.elf 
-arm-none-eabi-objdump -h -S SPI.elf  > "SPI.list"
+arm-none-eabi-size  quedaLivre.elf 
+arm-none-eabi-objdump -h -S quedaLivre.elf  > "quedaLivre.list"
    text	   data	    bss	    dec	    hex	filename
-  15672	     92	   2252	  18016	   4660	SPI.elf
+  12844	     40	   1816	  14700	   396c	quedaLivre.elf
 Finished building: default.size.stdout
  
-Finished building: SPI.list
+Finished building: quedaLivre.list
  

@@ -20,7 +20,7 @@ void LIS3DH_Init(void) {
 	 HAL_Delay(10);
 	 // Write to CTRL_REG1 to set data rate and enable all axes
 	 LIS3DH_WriteReg(LIS3DH_CTRL_REG1, 0x57); // 100Hz, enable X, Y, Z
-	 // Write to CTRL_REG4 to set scale default 4g and high-resolution mode
+	 // Write to CTRL_REG4 to set scale default 2g and high-resolution mode
 	 LIS3DH_WriteReg(LIS3DH_CTRL_REG4, 0xC8);
 
     uint8_t who_am_i = LIS3DH_ReadReg(LIS3DH_WHO_AM_I);

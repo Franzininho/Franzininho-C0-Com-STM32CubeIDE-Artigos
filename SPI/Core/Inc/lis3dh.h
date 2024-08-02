@@ -10,9 +10,6 @@
 #define LIS3DH_OUT_Y_H          0x2B
 #define LIS3DH_OUT_Z_L          0x2C
 #define LIS3DH_OUT_Z_H          0x2D
-#define LIS3DH_DATARATE_100HZ   0x50  // 100Hz data rate, all axes enabled
-#define LIS3DH_CTRL_REG4_BDU    0x80  // Block data update
-#define LIS3DH_CTRL_REG4_FS_2G  0x00  // +/- 2g full scale
 
 /* Public APIs */
 void LIS3DH_Init(void);
